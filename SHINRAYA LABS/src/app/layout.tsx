@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { ShinrayaConsole } from "@/components/interactive/ShinrayaConsole";
 import { siteUrl, siteDescription } from "@/lib/site";
 import "./globals.css";
+
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
@@ -33,6 +35,7 @@ export const metadata: Metadata = {
   },
   icons: { icon: "/icon.png", apple: "/apple-icon.png" },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -43,10 +46,11 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
-        <main id="main" tabIndex={-1}>
+        <main id="main" tabIndex={-1} className="overflow-x-hidden w-full max-w-full">
           {children}
         </main>
         <Footer />
+        <ShinrayaConsole />
       </body>
     </html>
   );

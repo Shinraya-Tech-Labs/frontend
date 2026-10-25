@@ -1,151 +1,181 @@
-import AnimatedContent from "@/components/approved/AnimatedContent";
 import type { Metadata } from "next";
 import { github, repoUrl } from "@/lib/projects";
-import { PageIntro, Eyebrow, ExternalLink } from "@/components/editorial";
+import { PageIntro, Eyebrow, ExternalLink, CollaborationCTA } from "@/components/editorial";
+
 export const metadata: Metadata = {
-  title: "Contribute",
+  title: "Contribute & Collaborate",
   description:
-    "Reproduce experiments, improve tooling, document limitations, and collaborate through Shinraya Tech Labs public repositories.",
+    "Reproduce experiments, audit models, improve runtime instrumentation, and contribute to open science with Shinraya Tech Labs.",
   alternates: { canonical: "/contribute" },
 };
+
 export default function Contribute() {
   return (
-    <>
+    <div className="relative w-full min-h-screen bg-[#090909] text-[#f2eee7]">
       <PageIntro
-        number="05"
+        category="Open Collaboration"
         title="Bring your questions."
         italic="Build with us."
-        description="You don’t need a big proposal to make a useful contribution. A reproducible issue, a clearer explanation, or an independent replication can move the work forward."
+        description="You do not need a formal academic proposal to make an impactful contribution. An independent reproduction run, an edge-case bug report, or a clearer limitation note moves the entire science forward."
       />
-      <AnimatedContent className="motion-section">
-        <section className="shell contribution-start">
-          <div>
-            <Eyebrow>Start with the source</Eyebrow>
-            <h2>
-              One public place
-              <br />
-              <em>to begin.</em>
-            </h2>
-            <p>
-              Explore the repositories, read the project&apos;s setup
-              instructions, and check existing issues before starting work.
-            </p>
-            <ExternalLink href={github} className="button">
-              Shinraya Tech Labs on GitHub
-            </ExternalLink>
-          </div>
-          <div className="contribution-steps">
-            <article>
-              <span>01</span>
-              <div>
-                <h3>Choose a question or tool.</h3>
-                <p>
-                  Start with the README and its evidence boundaries. Pick a
-                  change small enough to review and test.
-                </p>
-              </div>
-            </article>
-            <article>
-              <span>02</span>
-              <div>
-                <h3>Discuss the proposed change.</h3>
-                <p>
-                  Use the relevant repository&apos;s issues to report a problem
-                  or explain an idea, including expected behavior and a
-                  reproducible example.
-                </p>
-              </div>
-            </article>
-            <article>
-              <span>03</span>
-              <div>
-                <h3>Make the work reproducible.</h3>
-                <p>
-                  Follow project-specific contribution guidance. Include tests,
-                  environment details, and documentation where relevant to your
-                  pull request.
-                </p>
-              </div>
-            </article>
-          </div>
-        </section>
-      </AnimatedContent>
-      <section className="section shell">
-        <AnimatedContent className="motion-section">
-          <div className="section-heading">
-            <div>
-              <Eyebrow>Ways to participate</Eyebrow>
-              <h2>
-                Small contributions.
-                <br />
-                <em>Real value.</em>
+
+      {/* Getting Started Pipeline */}
+      <section className="relative w-full py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto space-y-16">
+        <div className="p-8 sm:p-12 lg:p-16 rounded-3xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] space-y-12">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#302e2a]/60">
+            <div className="space-y-3">
+              <Eyebrow>Contribution Pipeline</Eyebrow>
+              <h2 className="text-3xl sm:text-4xl font-normal text-[#f2eee7] tracking-tight">
+                One open source workflow to begin.
               </h2>
+              <p className="text-base text-[#aaa69e] font-light max-w-xl">
+                Start with a repository README, check the evidence boundaries, and propose small, easily testable changes.
+              </p>
+            </div>
+
+            <div className="shrink-0">
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#d6b799] text-[#090909] font-medium text-sm hover:bg-white transition-all duration-300 shadow-lg shadow-[#d6b799]/10"
+              >
+                GitHub Organization <span>↗</span>
+              </a>
             </div>
           </div>
-        </AnimatedContent>
-        <AnimatedContent className="motion-section">
-          <div className="values-grid">
-            <article>
-              <span>Research</span>
-              <h3>Reproduce an experiment.</h3>
-              <p>
-                Compare a result against its protocol. Document your
-                environment, any deviations, and what you observe.
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="space-y-4">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
+                Stage 1
+              </span>
+              <h3 className="text-xl font-normal text-[#f2eee7]">
+                Choose an experimental vector.
+              </h3>
+              <p className="text-sm text-[#aaa69e] font-light leading-relaxed">
+                Review a project README and its stated limitations. Identify a specific question, boundary condition, or test failure small enough to isolate.
               </p>
-              <ExternalLink href={`${repoUrl("ATLAS")}/issues`}>
-                ATLAS issues
-              </ExternalLink>
-            </article>
-            <article>
-              <span>Engineering</span>
-              <h3>Improve the instrument.</h3>
-              <p>
-                Investigate an edge case, strengthen a test, or help make
-                runtime evidence easier to understand.
+            </div>
+
+            <div className="space-y-4">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
+                Stage 2
+              </span>
+              <h3 className="text-xl font-normal text-[#f2eee7]">
+                Discuss before implementing.
+              </h3>
+              <p className="text-sm text-[#aaa69e] font-light leading-relaxed">
+                Open an issue in the target repository to align on scope. Share expected results, hardware constraints, and baseline comparison plans.
               </p>
-              <ExternalLink href={`${repoUrl("AgentWatch")}/issues`}>
-                AgentWatch issues
-              </ExternalLink>
-            </article>
-            <article>
-              <span>Documentation</span>
-              <h3>Make the path clearer.</h3>
-              <p>
-                Clarify setup instructions, surface an unstated assumption, or
-                document a limitation others should know.
+            </div>
+
+            <div className="space-y-4">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
+                Stage 3
+              </span>
+              <h3 className="text-xl font-normal text-[#f2eee7]">
+                Submit reproducible artifacts.
+              </h3>
+              <p className="text-sm text-[#aaa69e] font-light leading-relaxed">
+                Follow repository contribution rules. Include test suites, random seeds, environment lockfiles, and clear documentation with your pull request.
               </p>
-              <ExternalLink
-                href={`${repoUrl("quantum-advantage-simulator")}/issues`}
-              >
-                Simulator issues
-              </ExternalLink>
-            </article>
+            </div>
           </div>
-        </AnimatedContent>
-      </section>
-      <AnimatedContent className="motion-section">
-        <aside className="shell editorial-note">
-          <Eyebrow>Contribution guidance</Eyebrow>
-          <h3>Follow the project&apos;s own workflow.</h3>
-          <p>
-            Review the repository&apos;s contribution and license files before
-            submitting work. If guidance is missing, open an issue to agree on
-            scope first. These links lead to the actual project materials.
+        </div>
+
+        {/* Ways to Participate */}
+        <div className="space-y-8">
+          <div className="space-y-2">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
+              Engagement Vectors
+            </span>
+            <h2 className="text-3xl font-normal text-[#f2eee7] tracking-tight">
+              Small contributions. Real empirical value.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
+              <div className="space-y-3">
+                <span className="text-xs font-mono text-[#d6b799] uppercase tracking-wider">
+                  Empirical Science
+                </span>
+                <h3 className="text-2xl font-normal text-[#f2eee7]">
+                  Reproduce an experiment.
+                </h3>
+                <p className="text-sm text-[#aaa69e] font-light leading-relaxed">
+                  Rerun an evaluation protocol on your own hardware. Record hardware discrepancies, seed variance, and whether conclusions hold.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#302e2a]/50">
+                <ExternalLink href={`${repoUrl("ATLAS")}/issues`}>
+                  ATLAS Issue Tracker
+                </ExternalLink>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
+              <div className="space-y-3">
+                <span className="text-xs font-mono text-[#d6b799] uppercase tracking-wider">
+                  Software Infrastructure
+                </span>
+                <h3 className="text-2xl font-normal text-[#f2eee7]">
+                  Strengthen the tools.
+                </h3>
+                <p className="text-sm text-[#aaa69e] font-light leading-relaxed">
+                  Refactor runtime tracing, increase test coverage, or benchmark execution replay performance in AgentWatch and PulseStack.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#302e2a]/50">
+                <ExternalLink href={`${repoUrl("AgentWatch")}/issues`}>
+                  AgentWatch Issue Tracker
+                </ExternalLink>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
+              <div className="space-y-3">
+                <span className="text-xs font-mono text-[#d6b799] uppercase tracking-wider">
+                  Documentation & Auditing
+                </span>
+                <h3 className="text-2xl font-normal text-[#f2eee7]">
+                  Clarify the protocols.
+                </h3>
+                <p className="text-sm text-[#aaa69e] font-light leading-relaxed">
+                  Document hidden assumptions, clarify setup requirements, or point out unverified claims in our specifications.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#302e2a]/50">
+                <ExternalLink href={`${repoUrl("quantum-advantage-simulator")}/issues`}>
+                  Simulator Issue Tracker
+                </ExternalLink>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Contribution Guidelines Box */}
+        <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#141413]/60 space-y-4">
+          <Eyebrow>Project-Specific Guidelines</Eyebrow>
+          <h3 className="text-xl font-normal text-[#f2eee7]">
+            Review repository guidance before opening pull requests.
+          </h3>
+          <p className="text-sm text-[#aaa69e] font-light leading-relaxed max-w-3xl">
+            Each project maintains distinct licensing, typing, and testing fixtures. Please consult the dedicated contribution documents below:
           </p>
-          <div className="detail-links">
-            <ExternalLink
-              href={`${repoUrl("AgentWatch")}/blob/main/CONTRIBUTING.md`}
-            >
-              AgentWatch contribution guidance
+          <div className="pt-2 flex flex-wrap gap-6 text-sm">
+            <ExternalLink href={`${repoUrl("AgentWatch")}/blob/main/CONTRIBUTING.md`}>
+              AgentWatch Contributing Guide
             </ExternalLink>
-            <ExternalLink
-              href={`${repoUrl("quantum-advantage-simulator")}/blob/main/CONTRIBUTING.md`}
-            >
-              Simulator contribution guidance
+            <ExternalLink href={`${repoUrl("quantum-advantage-simulator")}/blob/main/CONTRIBUTING.md`}>
+              Quantum Simulator Contributing Guide
             </ExternalLink>
           </div>
-        </aside>
-      </AnimatedContent>
-    </>
+        </div>
+      </section>
+
+      <CollaborationCTA />
+    </div>
   );
 }
