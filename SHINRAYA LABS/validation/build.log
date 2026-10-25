@@ -1,0 +1,35 @@
+
+> shinraya-tech-labs@1.0.0 build
+> next build
+
+▲ Next.js 16.4.0 (Turbopack)
+✓ Running next.config took 32ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1630ms
+  Running TypeScript ...
+  Finished TypeScript in 2.5s ...
+  Collecting page data using 13 workers ...
+  Generating static pages using 13 workers (0/12) ...
+  Generating static pages using 13 workers (3/12) 
+  Generating static pages using 13 workers (6/12) 
+  Generating static pages using 13 workers (9/12) 
+✓ Generating static pages using 13 workers (12/12) in 1298ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /apple-icon.png
+├ ○ /contribute
+├ ○ /engineering
+├ ○ /icon.png
+├ ○ /publications
+├ ○ /research
+├ ○ /robots.txt
+└ ○ /sitemap.xml
+
+
+○  (Static)  prerendered as static content
+

@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+validation
+research-sources
+assets
+scripts
+*.tsbuildinfo
+.env*.local

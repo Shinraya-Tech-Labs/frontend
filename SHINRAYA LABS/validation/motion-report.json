@@ -1,0 +1,10 @@
+{
+  "origin": "https://shinraya-tech-labs.vercel.app",
+  "scrollReveal": true,
+  "routeEntryFade": true,
+  "keyboardReveal": true,
+  "liveReducedMotion": true,
+  "reducedMotion": true,
+  "noJavaScriptVisible": true,
+  "errors": []
+}

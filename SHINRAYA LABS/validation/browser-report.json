@@ -1,0 +1,242 @@
+{
+  "checkedAt": "2026-10-10T20:34:41.963Z",
+  "base": "http://127.0.0.1:3000",
+  "results": [
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/research",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/engineering",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/publications",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/about",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/contribute",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/research",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/engineering",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/publications",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/about",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/contribute",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/research",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/engineering",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/publications",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/about",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/contribute",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/research",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/engineering",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/publications",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/about",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    },
+    {
+      "route": "/contribute",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "h1Count": 1,
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "links": [
+    "http://127.0.0.1:3000/#main",
+    "http://127.0.0.1:3000/",
+    "http://127.0.0.1:3000/research",
+    "http://127.0.0.1:3000/engineering",
+    "http://127.0.0.1:3000/publications",
+    "http://127.0.0.1:3000/about",
+    "http://127.0.0.1:3000/contribute",
+    "http://127.0.0.1:3000/research#robust-reasoning-rl",
+    "http://127.0.0.1:3000/research#quantum-advantage-simulator",
+    "http://127.0.0.1:3000/research#atlas",
+    "http://127.0.0.1:3000/research#neurosim",
+    "https://github.com/Shinraya-Tech-Labs/AgentWatch",
+    "https://github.com/Shinraya-Tech-Labs/repopilot",
+    "https://github.com/Shinraya-Tech-Labs/VEX",
+    "https://github.com/Shinraya-Tech-Labs",
+    "http://127.0.0.1:3000/research#main",
+    "https://github.com/Shinraya-Tech-Labs/robust-reasoning-rl",
+    "https://github.com/Shinraya-Tech-Labs/robust-reasoning-rl/blob/codex/robust-reasoning/docs/final-report.md",
+    "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator",
+    "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/blob/main/docs/FINAL_RESEARCH_REPORT.md",
+    "https://github.com/Shinraya-Tech-Labs/ATLAS",
+    "https://github.com/Shinraya-Tech-Labs/ATLAS/blob/main/docs/MANIFOLD_V2_REPORT.md",
+    "https://github.com/Shinraya-Tech-Labs/nuerosim",
+    "http://127.0.0.1:3000/engineering#main",
+    "https://github.com/Shinraya-Tech-Labs/PulseStack",
+    "https://github.com/Shinraya-Tech-Labs/FluxCore",
+    "https://github.com/Shinraya-Tech-Labs/MEOWCODE",
+    "https://github.com/Shinraya-Tech-Labs/mycelium",
+    "https://github.com/Shinraya-Tech-Labs/SentinelCV",
+    "http://127.0.0.1:3000/publications#main",
+    "https://github.com/Shinraya-Tech-Labs/nuerosim#readme",
+    "https://github.com/Shinraya-Tech-Labs/ATLAS/blob/main/docs/CLAIMS.md",
+    "http://127.0.0.1:3000/about#main",
+    "http://127.0.0.1:3000/contribute#main",
+    "https://github.com/Shinraya-Tech-Labs/ATLAS/issues",
+    "https://github.com/Shinraya-Tech-Labs/AgentWatch/issues",
+    "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/issues",
+    "https://github.com/Shinraya-Tech-Labs/AgentWatch/blob/main/CONTRIBUTING.md",
+    "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/blob/main/CONTRIBUTING.md"
+  ],
+  "reducedMotion": true,
+  "noJavaScriptContent": true
+}
