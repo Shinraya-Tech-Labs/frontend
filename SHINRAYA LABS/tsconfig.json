@@ -18,10 +18,16 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "research-sources"]
+  "exclude": [
+    "node_modules",
+    "**/research-sources/**",
+    "research-sources",
+    "validation",
+    "scripts"
+  ]
 }

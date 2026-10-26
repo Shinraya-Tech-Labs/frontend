@@ -1,7 +1,12 @@
+import path from "node:path";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
+  turbopack: {
+    root: path.resolve(process.cwd()),
+  },
   headers: async () => [
     {
       source: "/:path*",
