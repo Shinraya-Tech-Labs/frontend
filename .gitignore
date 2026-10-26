@@ -9,7 +9,6 @@ node_modules
 # next.js
 /.next/
 /out/
-SHINRAYA LABS/.next/
 
 # production
 /build
@@ -25,12 +24,13 @@ yarn-error.log*
 
 # local env files
 .env*.local
-SHINRAYA LABS/.env*.local
 
 # vercel
 .vercel
-SHINRAYA LABS/.vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# legacy local folder (untracked, all code is at root)
+SHINRAYA LABS/
