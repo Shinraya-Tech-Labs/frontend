@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ShinrayaConsole } from "@/components/interactive/ShinrayaConsole";
 import { siteUrl, siteDescription } from "@/lib/site";
 import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -41,7 +47,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={outfit.className}>
         <a className="skip-link" href="#main">
           Skip to content
         </a>
