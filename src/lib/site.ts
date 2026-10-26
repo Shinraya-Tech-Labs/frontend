@@ -1,9 +1,15 @@
-const configuredUrl =
+const rawUrl =
   process.env.SITE_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
-export const siteUrl = new URL(configuredUrl);
+    : "https://shinraya-tech-labs.vercel.app");
+
+const sanitizedUrl =
+  rawUrl.startsWith("http://") || rawUrl.startsWith("https://")
+    ? rawUrl
+    : `https://${rawUrl}`;
+
+export const siteUrl = new URL(sanitizedUrl);
 export const discordInviteCode = "UT9uaeY46e";
 export const discordUrl = "https://discord.gg/UT9uaeY46e";
 export const siteDescription =
