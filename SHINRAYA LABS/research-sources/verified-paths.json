@@ -1,0 +1,65 @@
+[
+  {
+    "repo": "nuerosim",
+    "branch": "main",
+    "sha": "b46a795195baa01cf2dcee562e2b9983cce8bf1d",
+    "truncated": false,
+    "paths": []
+  },
+  {
+    "repo": "AgentWatch",
+    "branch": "main",
+    "sha": "5429f8932edb885b98e677aaeaa3bceca44c6307",
+    "truncated": false,
+    "paths": [
+      ".github/workflows/update-contributors.yml",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "agentwatch-landing/app/components/Contributors.tsx",
+      "agentwatch-landing/app/contributors",
+      "agentwatch-landing/app/contributors/ContributorsClient.tsx",
+      "agentwatch-landing/app/contributors/page.tsx",
+      "agentwatch-landing/public/contributors.json",
+      "agentwatch/security/license.py",
+      "benchmarks/awbench/results/LATEST.md",
+      "docs/v3/USER_GUIDE.md",
+      "docs/v3/adr/0013-awbench-gates-claims.md",
+      "tests/test_license.py"
+    ]
+  },
+  {
+    "repo": "ATLAS",
+    "branch": "main",
+    "sha": "56640828d3edc4859e456558ff240a18dca998ff",
+    "truncated": false,
+    "paths": [
+      "docs/CLAIMS.md",
+      "docs/MANIFOLD_V2_REPORT.md",
+      "tools/probe_legacy_pr_claims.py"
+    ]
+  },
+  {
+    "repo": "quantum-advantage-simulator",
+    "branch": "main",
+    "sha": "7a061e5ac530dbabacf34d0c3acfa43f25a38571",
+    "truncated": false,
+    "paths": [
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "docs/CONTRIBUTING.md",
+      "docs/FINAL_RESEARCH_REPORT.md",
+      "docs/HISTORICAL_FINAL_RESEARCH_REPORT.md"
+    ]
+  },
+  {
+    "repo": "robust-reasoning-rl",
+    "branch": "codex/robust-reasoning",
+    "sha": "264bcdcd456a05886d55611f1f85c021c4fdf392",
+    "truncated": false,
+    "paths": [
+      "LICENSE",
+      "data/GSM8K_LICENSE",
+      "docs/final-report.md"
+    ]
+  }
+]

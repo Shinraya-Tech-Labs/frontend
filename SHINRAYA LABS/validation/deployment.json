@@ -1,0 +1,79 @@
+{
+  "verifiedAt": "2026-10-10T20:36:21.756Z",
+  "origin": "https://shinraya-tech-labs.vercel.app",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/",
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://shinraya-tech-labs.vercel.app"
+    },
+    {
+      "route": "/research",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/research",
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://shinraya-tech-labs.vercel.app/research"
+    },
+    {
+      "route": "/engineering",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/engineering",
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://shinraya-tech-labs.vercel.app/engineering"
+    },
+    {
+      "route": "/publications",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/publications",
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://shinraya-tech-labs.vercel.app/publications"
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/about",
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://shinraya-tech-labs.vercel.app/about"
+    },
+    {
+      "route": "/contribute",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/contribute",
+      "contentType": "text/html; charset=utf-8",
+      "canonical": "https://shinraya-tech-labs.vercel.app/contribute"
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/sitemap.xml",
+      "contentType": "application/xml"
+    },
+    {
+      "route": "/robots.txt",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/robots.txt",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "route": "/icon.png",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/icon.png",
+      "contentType": "image/png"
+    },
+    {
+      "route": "/apple-icon.png",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/apple-icon.png",
+      "contentType": "image/png"
+    },
+    {
+      "route": "/og-image.png",
+      "status": 200,
+      "finalUrl": "https://shinraya-tech-labs.vercel.app/og-image.png",
+      "contentType": "image/png"
+    }
+  ],
+  "browserErrors": []
+}
