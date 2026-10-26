@@ -14,7 +14,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: "Shinraya Tech Labs — Research Beyond Assumptions.",
+    default: "Shinraya Tech Labs - Research Beyond Assumptions.",
     template: "%s | Shinraya Tech Labs",
   },
   description: siteDescription,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Shinraya Tech Labs — Research Beyond Assumptions.",
+        alt: "Shinraya Tech Labs - Research Beyond Assumptions.",
       },
     ],
   },
