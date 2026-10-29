@@ -51,9 +51,9 @@ export function HyperframeSeekbar() {
       <div className="mt-2.5 mr-4 px-2.5 py-1 rounded-full border border-[#302e2a]/80 bg-[#090909]/90 backdrop-blur-md text-[10px] font-mono text-[#aaa69e] flex items-center gap-2 shadow-lg shadow-black/40">
         <span className="w-1.5 h-1.5 rounded-full bg-[#d6b799] animate-pulse" />
         <span className="text-[#f2eee7] font-medium">FRM {String(frame).padStart(4, "0")}</span>
-        <span className="text-[#aaa69e]/60">//</span>
+        <span className="text-[#aaa69e]">{"//"}</span>
         <span className="text-[#d6b799]">{(progress * 100).toFixed(0)}%</span>
-        <span className="hidden sm:inline text-[#aaa69e]/50">// 60FPS</span>
+        <span className="hidden sm:inline text-[#aaa69e]">{"// 60FPS"}</span>
       </div>
     </aside>
   );

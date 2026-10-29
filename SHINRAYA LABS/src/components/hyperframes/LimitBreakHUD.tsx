@@ -1,15 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useSyncExternalStore } from "react";
 import { useLimitBreak } from "@/context/LimitBreakContext";
+
+const emptySubscribe = () => () => {};
 
 export function LimitBreakHUD() {
   const { isLimitBreak, toggleLimitBreak } = useLimitBreak();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   if (!mounted) return null;
 

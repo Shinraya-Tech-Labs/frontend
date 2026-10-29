@@ -158,36 +158,36 @@ export function HorizontalAccordion() {
               </div>
 
               {/* Active content reveal */}
-              <div
-                className={`transition-all duration-500 my-6 ${
-                  isActive ? "opacity-100 max-h-60" : "opacity-0 lg:max-h-0 hidden lg:block"
-                }`}
-              >
-                <p className="text-base text-[#f2eee7] font-normal leading-relaxed">
-                  {sys.tagline}
-                </p>
-                <p className="mt-3 text-xs sm:text-sm text-[#aaa69e] font-light leading-relaxed">
-                  {sys.detail}
-                </p>
+              {isActive && (
+                <div className="my-6 animate-fade-in">
+                  <p className="text-base text-[#f2eee7] font-normal leading-relaxed">
+                    {sys.tagline}
+                  </p>
+                  <p className="mt-3 text-xs sm:text-sm text-[#aaa69e] font-light leading-relaxed">
+                    {sys.detail}
+                  </p>
 
-                <div className="mt-6 flex items-center justify-between pt-4 border-t border-[#302e2a]/60 font-mono text-xs">
-                  <span className="text-[#aaa69e]">{sys.statLabel}</span>
-                  <span className="text-[#d6b799] font-medium">{sys.statValue}</span>
+                  <div className="mt-6 flex items-center justify-between pt-4 border-t border-[#302e2a]/60 font-mono text-xs">
+                    <span className="text-[#aaa69e]">{sys.statLabel}</span>
+                    <span className="text-[#d6b799] font-medium">{sys.statValue}</span>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Footer link */}
-              <div className="pt-4 border-t border-[#302e2a]/40 flex items-center justify-between">
-                <a
-                  href={repoUrl(sys.repo)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-medium text-[#d6b799] hover:text-white transition-colors flex items-center gap-1.5"
-                >
-                  Source Repository <span>↗</span>
-                </a>
-                <span className="text-[11px] font-mono text-[#aaa69e]">GitHub</span>
-              </div>
+              {isActive && (
+                <div className="pt-4 border-t border-[#302e2a]/40 flex items-center justify-between">
+                  <a
+                    href={repoUrl(sys.repo)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-medium text-[#d6b799] hover:text-white transition-colors flex items-center gap-1.5"
+                  >
+                    Source Repository <span>↗</span>
+                  </a>
+                  <span className="text-[11px] font-mono text-[#aaa69e]">GitHub</span>
+                </div>
+              )}
             </div>
           );
         })}

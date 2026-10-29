@@ -6,8 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "test:sci": "node scripts/verify-scientific-simulation.mjs",
+    "test:3d": "node scripts/verify-hyperframes-3d.mjs",
+    "test": "npm run typecheck && npm run test:sci && npm run test:3d"
   },
   "dependencies": {
     "@tailwindcss/postcss": "4.3.3",

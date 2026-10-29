@@ -23,10 +23,6 @@ export function QuantumManifold3D({ className = "" }: { className?: string }) {
     let animationFrameId: number;
     let isDisposed = false;
 
-    const prefersReduced =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
     const width = container.clientWidth || 240;
     const height = container.clientHeight || 180;
 
@@ -39,7 +35,7 @@ export function QuantumManifold3D({ className = "" }: { className?: string }) {
         powerPreference: "high-performance",
       });
     } catch {
-      setWebglError(true);
+      queueMicrotask(() => setWebglError(true));
       return;
     }
     renderer.setSize(width, height);

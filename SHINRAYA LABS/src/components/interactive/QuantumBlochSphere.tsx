@@ -61,11 +61,6 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
     let animationFrameId: number;
     let isDisposed = false;
 
-    // Check system prefers-reduced-motion
-    const prefersReduced =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
     // Renderer setup with safe WebGL try/catch fallback
     const width = container.clientWidth || 360;
     const height = container.clientHeight || 360;
@@ -79,7 +74,7 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
         powerPreference: "high-performance",
       });
     } catch {
-      setWebglError(true);
+      queueMicrotask(() => setWebglError(true));
       return;
     }
 
@@ -286,16 +281,12 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
     resizeObserver.observe(container);
 
     // Animation Loop
-    let lastTime = performance.now();
     let frameCounter = 0;
     let lastFpsUpdate = performance.now();
 
     const animate = (time: number) => {
       if (isDisposed) return;
       animationFrameId = requestAnimationFrame(animate);
-
-      const delta = Math.min((time - lastTime) / 1000, 0.1);
-      lastTime = time;
 
       // Track FPS
       frameCounter++;

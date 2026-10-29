@@ -93,7 +93,7 @@ export function HeroSection() {
           <h1 className="hero-heading max-w-5xl text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-normal tracking-tight text-[#f2eee7] leading-[1.05]">
             Investigating artificial intelligence{" "}
             <span className="font-serif italic text-[#d6b799] block sm:inline">
-              beyond assumptions.
+              beyond Assumptions.
             </span>
           </h1>
 

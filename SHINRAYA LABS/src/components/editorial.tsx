@@ -124,9 +124,11 @@ export function CollaborationCTA() {
             </a>
             <Link
               className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#d6b799] text-black font-semibold text-sm hover:bg-white transition-all duration-300 shadow-lg shadow-[#d6b799]/10"
+              style={{ color: "#000000" }}
               href="/contribute"
             >
-              Contribute to the Work <Arrow />
+              <span style={{ color: "#000000" }}>Contribute to the Work</span>
+              <span aria-hidden="true" style={{ color: "#000000" }}>→</span>
             </Link>
             <a
               href={github}

@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-10T20:34:41.963Z",
-  "base": "http://127.0.0.1:3000",
+  "checkedAt": "2026-10-29T17:03:52.033Z",
+  "base": "https://shinraya-tech-labs.vercel.app",
   "results": [
     {
       "route": "/",
@@ -8,7 +8,57 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/research",
@@ -16,7 +66,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/70"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/engineering",
@@ -24,7 +88,18 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/publications",
@@ -32,7 +107,18 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/about",
@@ -40,7 +126,18 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/contribute",
@@ -48,7 +145,18 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/",
@@ -56,7 +164,60 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/research",
@@ -64,7 +225,24 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-\\[\\#aaa69e\\]\\/70"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/engineering",
@@ -72,7 +250,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/publications",
@@ -80,7 +272,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/about",
@@ -88,7 +294,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/contribute",
@@ -96,7 +316,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/",
@@ -104,7 +338,63 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/research",
@@ -112,7 +402,24 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-\\[\\#aaa69e\\]\\/70"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/engineering",
@@ -120,7 +427,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/publications",
@@ -128,7 +449,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/about",
@@ -136,7 +471,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/contribute",
@@ -144,7 +493,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/50"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/",
@@ -152,7 +515,60 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(2) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(3) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\[\\#d6b799\\]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\[\\#302e2a\\]\\/60.rounded.px-2"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > div:nth-child(1) > .lg\\:text-3xl.text-2xl"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .hover\\:text-white.gap-1\\.5[target=\"_blank\"]"
+            ],
+            [
+              ".lg\\:flex-\\[1\\].bg-\\[\\#111110\\]\\/80.hover\\:bg-\\[\\#141413\\]:nth-child(4) > .border-\\[\\#302e2a\\]\\/40.pt-4.border-t > .text-\\[11px\\].text-\\[\\#aaa69e\\].font-mono"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/research",
@@ -160,7 +576,21 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-\\[\\#aaa69e\\]\\/70"
+            ],
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/engineering",
@@ -168,7 +598,18 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/publications",
@@ -176,7 +617,18 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/about",
@@ -184,7 +636,18 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     },
     {
       "route": "/contribute",
@@ -192,27 +655,67 @@
       "status": 200,
       "overflow": false,
       "h1Count": 1,
-      "violations": []
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            [
+              ".text-black"
+            ]
+          ]
+        }
+      ]
     }
   ],
-  "errors": [],
+  "errors": [
+    "/ 390: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"]]}]",
+    "/research 390: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/70\"],[\".text-black\"]]}]",
+    "/engineering 390: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-black\"]]}]",
+    "/publications 390: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-black\"]]}]",
+    "/about 390: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-black\"]]}]",
+    "/contribute 390: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-black\"]]}]",
+    "/ 1440: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"]]}]",
+    "/research 1440: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/70\"],[\".text-black\"]]}]",
+    "/engineering 1440: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-black\"]]}]",
+    "/publications 1440: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-black\"]]}]",
+    "/about 1440: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-black\"]]}]",
+    "/contribute 1440: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-black\"]]}]",
+    "/ 768: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"]]}]",
+    "/research 768: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/70\"],[\".text-black\"]]}]",
+    "/engineering 768: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-black\"]]}]",
+    "/publications 768: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-black\"]]}]",
+    "/about 768: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-black\"]]}]",
+    "/contribute 768: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/50\"],[\".text-black\"]]}]",
+    "/ 320: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(2) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(3) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .tracking-widest.uppercase.text-\\\\[\\\\#d6b799\\\\]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .mb-4.gap-4.justify-between > .bg-\\\\[\\\\#302e2a\\\\]\\\\/60.rounded.px-2\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > div:nth-child(1) > .lg\\\\:text-3xl.text-2xl\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .hover\\\\:text-white.gap-1\\\\.5[target=\\\"_blank\\\"]\"],[\".lg\\\\:flex-\\\\[1\\\\].bg-\\\\[\\\\#111110\\\\]\\\\/80.hover\\\\:bg-\\\\[\\\\#141413\\\\]:nth-child(4) > .border-\\\\[\\\\#302e2a\\\\]\\\\/40.pt-4.border-t > .text-\\\\[11px\\\\].text-\\\\[\\\\#aaa69e\\\\].font-mono\"]]}]",
+    "/research 320: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-\\\\[\\\\#aaa69e\\\\]\\\\/70\"],[\".text-black\"]]}]",
+    "/engineering 320: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-black\"]]}]",
+    "/publications 320: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-black\"]]}]",
+    "/about 320: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-black\"]]}]",
+    "/contribute 320: [{\"id\":\"color-contrast\",\"impact\":\"serious\",\"description\":\"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\"nodes\":[[\".text-black\"]]}]",
+    "Reduced motion accessibility violations",
+    "SSR content missing"
+  ],
   "links": [
-    "http://127.0.0.1:3000/#main",
-    "http://127.0.0.1:3000/",
-    "http://127.0.0.1:3000/research",
-    "http://127.0.0.1:3000/engineering",
-    "http://127.0.0.1:3000/publications",
-    "http://127.0.0.1:3000/about",
-    "http://127.0.0.1:3000/contribute",
-    "http://127.0.0.1:3000/research#robust-reasoning-rl",
-    "http://127.0.0.1:3000/research#quantum-advantage-simulator",
-    "http://127.0.0.1:3000/research#atlas",
-    "http://127.0.0.1:3000/research#neurosim",
-    "https://github.com/Shinraya-Tech-Labs/AgentWatch",
+    "https://shinraya-tech-labs.vercel.app/#main",
+    "https://shinraya-tech-labs.vercel.app/",
+    "https://shinraya-tech-labs.vercel.app/research",
+    "https://shinraya-tech-labs.vercel.app/engineering",
+    "https://shinraya-tech-labs.vercel.app/publications",
+    "https://shinraya-tech-labs.vercel.app/about",
+    "https://shinraya-tech-labs.vercel.app/contribute",
+    "https://discord.gg/UT9uaeY46e",
+    "https://shinraya-tech-labs.vercel.app/research#robust-reasoning-rl",
+    "https://shinraya-tech-labs.vercel.app/research#quantum-advantage-simulator",
+    "https://shinraya-tech-labs.vercel.app/research#atlas",
+    "https://shinraya-tech-labs.vercel.app/research#neurosim",
     "https://github.com/Shinraya-Tech-Labs/repopilot",
     "https://github.com/Shinraya-Tech-Labs/VEX",
+    "https://github.com/Shinraya-Tech-Labs/PulseStack",
+    "https://github.com/Shinraya-Tech-Labs/FluxCore",
     "https://github.com/Shinraya-Tech-Labs",
-    "http://127.0.0.1:3000/research#main",
+    "https://shinraya-tech-labs.vercel.app/research#main",
     "https://github.com/Shinraya-Tech-Labs/robust-reasoning-rl",
     "https://github.com/Shinraya-Tech-Labs/robust-reasoning-rl/blob/codex/robust-reasoning/docs/final-report.md",
     "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator",
@@ -220,17 +723,16 @@
     "https://github.com/Shinraya-Tech-Labs/ATLAS",
     "https://github.com/Shinraya-Tech-Labs/ATLAS/blob/main/docs/MANIFOLD_V2_REPORT.md",
     "https://github.com/Shinraya-Tech-Labs/nuerosim",
-    "http://127.0.0.1:3000/engineering#main",
-    "https://github.com/Shinraya-Tech-Labs/PulseStack",
-    "https://github.com/Shinraya-Tech-Labs/FluxCore",
+    "https://shinraya-tech-labs.vercel.app/engineering#main",
+    "https://github.com/Shinraya-Tech-Labs/AgentWatch",
     "https://github.com/Shinraya-Tech-Labs/MEOWCODE",
     "https://github.com/Shinraya-Tech-Labs/mycelium",
     "https://github.com/Shinraya-Tech-Labs/SentinelCV",
-    "http://127.0.0.1:3000/publications#main",
+    "https://shinraya-tech-labs.vercel.app/publications#main",
     "https://github.com/Shinraya-Tech-Labs/nuerosim#readme",
     "https://github.com/Shinraya-Tech-Labs/ATLAS/blob/main/docs/CLAIMS.md",
-    "http://127.0.0.1:3000/about#main",
-    "http://127.0.0.1:3000/contribute#main",
+    "https://shinraya-tech-labs.vercel.app/about#main",
+    "https://shinraya-tech-labs.vercel.app/contribute#main",
     "https://github.com/Shinraya-Tech-Labs/ATLAS/issues",
     "https://github.com/Shinraya-Tech-Labs/AgentWatch/issues",
     "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/issues",
