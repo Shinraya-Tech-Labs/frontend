@@ -79,7 +79,29 @@ This document maps all public research projects published by Shinraya Tech Labs 
 
 ---
 
-## 5. Engineering Projects Portfolio
+## 5. ACI Architecture Framework (Generational Context)
+
+- **Domain**: Long-Horizon Agent Memory, Attention Economics, Multi-Agent Governance
+- **Core Question**: How can long-horizon LLM agents prevent softmax attention dilution (The Fool's Theorem / Softmax Inundation) and maintain goal invariants when operating across high-turn multi-tool environments?
+- **Repository**: `Team-Auralis/ACI-Architecture-Framework`
+- **Branch**: `main`
+- **Commit SHA**: `abc98cd15129df548dbceb7ea142fc3eca538ba1`
+- **Primary Reports**: `docs/papers/The_Softmax_Inundation_Theorem.pdf`, `docs/research/CCB_BENCHMARK_REPORT.md`
+- **Theoretical Foundations**:
+  - Theorem 1 (Softmax Inundation Bound): $A_{i,\mathrm{inv}} \le \frac{\kappa L_u}{L_u + |\mathcal{S}_{\mathrm{noise}}|} = \mathcal{O}(L_u / |\mathcal{S}_{\mathrm{noise}}|)$, with $\kappa = e^{2M_Q M_K / \sqrt{d_k}}$.
+  - Theorem 2 (Invariant Attention Retention): $A_{i,\mathrm{inv}}^{(\mathrm{GC})} \ge \frac{L_u}{L_u + \kappa C_{\mathrm{bound}}} > 0$ for all $t \ge 1$.
+- **Empirical Benchmarks & Validation**:
+  - CCB-001 Context Benchmark: 5,099 to 129 active tokens (-97.5% footprint), Cognitive Signal Ratio improved 33.9x.
+  - CIC-Bench: 8 of 8 intent conservation scenarios validated (cryptographic Ed25519 authorization, Merkle DAG audit chaining, anti-Goodhart drift detection).
+  - Live Transformer Inference: Qwen2.5-0.5B eager forward passes verify empirical attention dilution down to 0.381 under 2,048 distractor tokens, and stability at ~0.406 across 20 turns under bounded Generational Context.
+- **Explicit Disclosed Limitations**:
+  - The Softmax Inundation upper bound is derived under uniform projection energy bounds ($M_Q, M_K$); under extreme score contrast, the analytical bound can be loose.
+  - The theorem guarantees attention allocation retention, not cognitive task success or immunity to hallucination.
+  - Live transformer measurements were executed on Qwen2.5-0.5B; evaluations on frontier neural architectures (Claude 3.5 Sonnet, GPT-4o, Llama-3-70B) across SWE-bench Verified remain future work.
+
+---
+
+## 6. Engineering Projects Portfolio
 
 | Project | Language / Stack | Architectural Role | Public Status & Verification Boundary |
 | :--- | :--- | :--- | :--- |

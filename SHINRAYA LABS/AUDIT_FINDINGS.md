@@ -15,6 +15,7 @@ This document tracks all confirmed findings, technical defects, scientific verif
 | **STL-SCI-001** | Scientific Computing | `QuantumBlochSphere.tsx`, `verify-hyperframes-3d.mjs` | High | Confirmed | **VERIFIED PASS** | Spherical coordinate mapping radius invariant ($r = 1.500000$) and quantum probability conservation ($P(\|0\rangle) + P(\|1\rangle) = 1.000000$) tested and passed. |
 | **STL-SCI-002** | Computational Neuroscience | `TestbenchSimulator.tsx`, `verify-scientific-simulation.mjs` | Medium | Confirmed | **VERIFIED PASS** | Hodgkin-Huxley biophysical stability at resting potential ($-65\text{ mV}$) and suprathreshold action potential depolarization ($+35.5\text{ mV}$) verified. |
 | **STL-SCI-003** | Machine Learning | `TestbenchSimulator.tsx`, `projects.ts` | Medium | Confirmed | **VERIFIED PASS** | Robust GRPO verifier corruption drift model verified: bounded hack index ($\le 25\%$) under 50% adversarial noise, preserving explicit negative HotpotQA disclosure. |
+| **STL-RES-004** | Agent Architecture / Context | `Team-Auralis/ACI-Architecture-Framework` | High | Confirmed | **VERIFIED PASS** | Cross-audited ACI Generational Context framework. Reconciled live transformer probe telemetry in documentation, verified 11/11 tests, and mapped formal Softmax Inundation theorems into research provenance. |
 
 ---
 
@@ -50,3 +51,9 @@ This document tracks all confirmed findings, technical defects, scientific verif
 - **Root Cause**: Calling `setMounted(true)` synchronously inside `useEffect([])` creates an immediate second render pass in React 19.
 - **Correction**: Replaced state/effect with React 19's idiomatic `useSyncExternalStore(emptySubscribe, () => true, () => false)`.
 - **Verification**: `npx eslint src` exited with code 0.
+
+### STL-RES-004: ACI Architecture Framework Integration & Cross-Audit
+- **Affected Repository**: `Team-Auralis/ACI-Architecture-Framework`
+- **Observed Behavior**: High-impact agent memory research (`generational_context`, Softmax Inundation Theorem, CCB-001, CIC-Bench) was maintained in a sibling repository without synchronized provenance linkage in Shinraya Tech Labs' research register. Internal audit document `ACI_CURRENT_STATE_AUDIT.md` lagged recent commit `abc98cd` that introduced live Qwen2.5-0.5B attention measurements.
+- **Correction**: Completed formal mathematical and code quality audit of `ACI-Architecture-Framework`. Reconciled `docs/ACI_CURRENT_STATE_AUDIT.md` to reflect real transformer forward-pass experiments, verified 11/11 unit tests, and integrated complete scientific provenance into `RESEARCH_VALIDATION.md`.
+- **Verification**: `python -m pytest tests/` passed (11/11 in 0.12s); `python ccb_bench.py` and `python cic_bench.py` verified; live forward-pass probe verified on GPU.
