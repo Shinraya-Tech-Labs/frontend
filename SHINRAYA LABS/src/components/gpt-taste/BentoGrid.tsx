@@ -1,19 +1,71 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
 import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 import { HyperframeCounter } from "@/components/hyperframes/HyperframeCounter";
 
 export function BentoGrid() {
-  return (
-    <section className="relative w-full py-32 md:py-44 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#d6b799]/5 blur-[160px] pointer-events-none rounded-full" />
+  const sectionRef = useRef<HTMLElement>(null);
 
-      <div className="mb-20 max-w-4xl">
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".bento-header > *",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.12,
+          duration: 0.85,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".bento-header",
+            start: "top 85%",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".bento-card",
+        { opacity: 0, y: 50, scale: 0.96 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          stagger: 0.15,
+          duration: 0.95,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".bento-grid-container",
+            start: "top 80%",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+  };
+
+  return (
+    <section ref={sectionRef} className="relative w-full py-32 md:py-44 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#d6b799]/5 blur-[160px] pointer-events-none rounded-full animate-ambient-drift" />
+
+      <div className="bento-header mb-20 max-w-4xl">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#302e2a] bg-[#111110] text-xs font-mono text-[#d6b799] tracking-wider uppercase mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#d6b799]" />
           Empirical Research Grid
@@ -27,10 +79,21 @@ export function BentoGrid() {
       </div>
 
       {/* Gapless Bento Grid: 12 Columns, grid-flow-dense */}
-      <div className="grid grid-cols-1 md:grid-cols-12 grid-flow-dense gap-6">
+      <div className="bento-grid-container grid grid-cols-1 md:grid-cols-12 grid-flow-dense gap-6">
         
         {/* Card 1: Robust Reasoning RL - 7 cols, 2 rows */}
-        <div className="group relative col-span-12 md:col-span-7 md:row-span-2 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40 hover:shadow-[0_0_50px_-15px_rgba(214,183,153,0.15)]">
+        <div
+          onMouseMove={handleMouseMove}
+          className="bento-card group relative col-span-12 md:col-span-7 md:row-span-2 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 md:p-10 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40 hover:shadow-[0_0_50px_-15px_rgba(214,183,153,0.15)]"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[inherit] z-10"
+            style={{
+              background:
+                "radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(214, 183, 153, 0.08), transparent 75%)",
+            }}
+            aria-hidden="true"
+          />
           <HyperframeBeam radius={16} duration={8} />
           <HyperframeCorners />
 
@@ -96,7 +159,18 @@ export function BentoGrid() {
         </div>
 
         {/* Card 2: Quantum Advantage Simulator - 5 cols, 1 row */}
-        <div className="group relative col-span-12 md:col-span-5 md:row-span-1 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40 hover:shadow-[0_0_40px_-15px_rgba(214,183,153,0.12)]">
+        <div
+          onMouseMove={handleMouseMove}
+          className="bento-card group relative col-span-12 md:col-span-5 md:row-span-1 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40 hover:shadow-[0_0_40px_-15px_rgba(214,183,153,0.12)]"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[inherit] z-10"
+            style={{
+              background:
+                "radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(214, 183, 153, 0.08), transparent 75%)",
+            }}
+            aria-hidden="true"
+          />
           <HyperframeCorners />
           <div>
             <div className="flex items-center justify-between gap-4 mb-4">
@@ -132,7 +206,18 @@ export function BentoGrid() {
         </div>
 
         {/* Card 3: ATLAS Geometric Retrieval - 5 cols, 1 row */}
-        <div className="group relative col-span-12 md:col-span-5 md:row-span-1 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40 hover:shadow-[0_0_40px_-15px_rgba(214,183,153,0.12)]">
+        <div
+          onMouseMove={handleMouseMove}
+          className="bento-card group relative col-span-12 md:col-span-5 md:row-span-1 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40 hover:shadow-[0_0_40px_-15px_rgba(214,183,153,0.12)]"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[inherit] z-10"
+            style={{
+              background:
+                "radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(214, 183, 153, 0.08), transparent 75%)",
+            }}
+            aria-hidden="true"
+          />
           <HyperframeCorners />
           <div>
             <div className="flex items-center justify-between gap-4 mb-4">
@@ -168,7 +253,18 @@ export function BentoGrid() {
         </div>
 
         {/* Card 4: NeuroSim - 6 cols, 1 row */}
-        <div className="group relative col-span-12 md:col-span-6 md:row-span-1 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40">
+        <div
+          onMouseMove={handleMouseMove}
+          className="bento-card group relative col-span-12 md:col-span-6 md:row-span-1 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[inherit] z-10"
+            style={{
+              background:
+                "radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(214, 183, 153, 0.08), transparent 75%)",
+            }}
+            aria-hidden="true"
+          />
           <HyperframeCorners />
           <div>
             <div className="flex items-center justify-between gap-4 mb-4">
@@ -204,7 +300,18 @@ export function BentoGrid() {
         </div>
 
         {/* Card 5: AgentWatch - 6 cols, 1 row */}
-        <div className="group relative col-span-12 md:col-span-6 md:row-span-1 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40">
+        <div
+          onMouseMove={handleMouseMove}
+          className="bento-card group relative col-span-12 md:col-span-6 md:row-span-1 overflow-hidden rounded-2xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] p-8 flex flex-col justify-between transition-all duration-700 hover:border-[#d6b799]/40"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[inherit] z-10"
+            style={{
+              background:
+                "radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(214, 183, 153, 0.08), transparent 75%)",
+            }}
+            aria-hidden="true"
+          />
           <HyperframeCorners />
           <div>
             <div className="flex items-center justify-between gap-4 mb-4">

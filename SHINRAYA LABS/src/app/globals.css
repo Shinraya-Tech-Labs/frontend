@@ -30,6 +30,28 @@
   animation: hyperShimmer 4.5s ease-in-out infinite;
 }
 
+@keyframes ambientDrift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(25px, -18px) scale(1.08);
+  }
+}
+.animate-ambient-drift {
+  animation: ambientDrift 16s ease-in-out infinite;
+}
+
+@keyframes oscilloscopeSweep {
+  0% { transform: translateX(-10%); opacity: 0; }
+  15% { opacity: 0.8; }
+  85% { opacity: 0.8; }
+  100% { transform: translateX(520px); opacity: 0; }
+}
+.animate-oscilloscope-sweep {
+  animation: oscilloscopeSweep 3.2s linear infinite;
+}
+
 .motion-card {
   min-width: 0;
   height: 100%;

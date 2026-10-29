@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 
 export function PinnedInquiry() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,20 +25,22 @@ export function PinnedInquiry() {
         invalidateOnRefresh: true,
       });
 
-      // Subtle lift for right column cards as they scroll in
+      // Scrubbed lift & reveal for right column cards as they scroll in
       const cards = gsap.utils.toArray<HTMLElement>(".pinned-card");
       cards.forEach((card) => {
         gsap.fromTo(
           card,
-          { y: 24 },
+          { y: 50, opacity: 0.35, scale: 0.97 },
           {
             y: 0,
-            duration: 0.8,
+            opacity: 1,
+            scale: 1,
+            duration: 0.9,
             ease: "power2.out",
             scrollTrigger: {
               trigger: card,
-              start: "top 85%",
-              end: "top 55%",
+              start: "top 90%",
+              end: "top 60%",
               scrub: 1,
             },
           }
@@ -47,6 +50,12 @@ export function PinnedInquiry() {
 
     return () => ctx.revert();
   }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+  };
 
   return (
     <section
@@ -82,7 +91,19 @@ export function PinnedInquiry() {
         {/* Right Column: Dynamic Scrolling Stack */}
         <div className="lg:col-span-7 space-y-8">
           
-          <div className="pinned-card p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110] space-y-4 hover:border-[#d6b799]/40 transition-colors">
+          <div
+            onMouseMove={handleMouseMove}
+            className="pinned-card group relative overflow-hidden p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110] space-y-4 hover:border-[#d6b799]/40 transition-all duration-500"
+          >
+            <div
+              className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[inherit] z-10"
+              style={{
+                background:
+                  "radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(214, 183, 153, 0.08), transparent 75%)",
+              }}
+              aria-hidden="true"
+            />
+            <HyperframeCorners size="text-[10px]" />
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
               Controlled Evaluation
             </span>
@@ -98,7 +119,19 @@ export function PinnedInquiry() {
             </div>
           </div>
 
-          <div className="pinned-card p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110] space-y-4 hover:border-[#d6b799]/40 transition-colors">
+          <div
+            onMouseMove={handleMouseMove}
+            className="pinned-card group relative overflow-hidden p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110] space-y-4 hover:border-[#d6b799]/40 transition-all duration-500"
+          >
+            <div
+              className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[inherit] z-10"
+              style={{
+                background:
+                  "radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(214, 183, 153, 0.08), transparent 75%)",
+              }}
+              aria-hidden="true"
+            />
+            <HyperframeCorners size="text-[10px]" />
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
               Classical Reference Comparison
             </span>
@@ -114,7 +147,19 @@ export function PinnedInquiry() {
             </div>
           </div>
 
-          <div className="pinned-card p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110] space-y-4 hover:border-[#d6b799]/40 transition-colors">
+          <div
+            onMouseMove={handleMouseMove}
+            className="pinned-card group relative overflow-hidden p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110] space-y-4 hover:border-[#d6b799]/40 transition-all duration-500"
+          >
+            <div
+              className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[inherit] z-10"
+              style={{
+                background:
+                  "radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(214, 183, 153, 0.08), transparent 75%)",
+              }}
+              aria-hidden="true"
+            />
+            <HyperframeCorners size="text-[10px]" />
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#ff6b7a]">
               Negative Outcome Discipline
             </span>

@@ -20,10 +20,10 @@ export function Marquee() {
         {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
           <div
             key={idx}
-            className="flex items-center space-x-6 text-xs uppercase tracking-[0.25em] text-[#aaa69e]/80"
+            className="flex items-center space-x-6 text-xs font-mono uppercase tracking-[0.25em] text-[#aaa69e] hover:text-[#d6b799] transition-colors duration-300 cursor-default"
           >
             <span>{item}</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-[#d6b799]/50" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#d6b799]/50 animate-pulse" />
           </div>
         ))}
       </div>

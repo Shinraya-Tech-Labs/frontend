@@ -1,7 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { repoUrl } from "@/lib/projects";
+import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 
 type SystemItem = {
   name: string;
@@ -63,10 +66,54 @@ const SYSTEMS: SystemItem[] = [
 
 export function HorizontalAccordion() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".accordion-header > *",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.12,
+          duration: 0.85,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".accordion-header",
+            start: "top 85%",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".accordion-item",
+        { opacity: 0, y: 40, scale: 0.97 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          stagger: 0.12,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".accordion-container",
+            start: "top 82%",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="relative w-full py-32 md:py-48 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-[#302e2a]/50">
-      <div className="mb-16 max-w-3xl">
+    <section ref={sectionRef} className="relative w-full py-32 md:py-48 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-[#302e2a]/50">
+      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#d6b799]/5 blur-[160px] pointer-events-none rounded-full animate-ambient-drift" />
+      <div className="accordion-header mb-16 max-w-3xl">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#302e2a] bg-[#111110] text-xs font-mono text-[#d6b799] tracking-wider uppercase mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#d6b799]" />
           Systems Engineering Arsenal
@@ -80,7 +127,7 @@ export function HorizontalAccordion() {
       </div>
 
       {/* Horizontal Accordion Container */}
-      <div className="flex flex-col lg:flex-row w-full h-auto lg:h-[460px] gap-4">
+      <div className="accordion-container flex flex-col lg:flex-row w-full h-auto lg:h-[460px] gap-4">
         {SYSTEMS.map((sys, idx) => {
           const isActive = activeIndex === idx;
           return (
@@ -88,12 +135,13 @@ export function HorizontalAccordion() {
               key={sys.name}
               onMouseEnter={() => setActiveIndex(idx)}
               onClick={() => setActiveIndex(idx)}
-              className={`relative overflow-hidden rounded-2xl border transition-all duration-700 cursor-pointer flex flex-col justify-between p-7 lg:p-8 ${
+              className={`accordion-item relative overflow-hidden rounded-2xl border transition-all duration-700 cursor-pointer flex flex-col justify-between p-7 lg:p-8 ${
                 isActive
                   ? "lg:flex-[3] border-[#d6b799]/50 bg-gradient-to-b from-[#181816] to-[#0f0f0e] shadow-[0_0_50px_-20px_rgba(214,183,153,0.15)]"
                   : "lg:flex-[1] border-[#302e2a] bg-[#111110]/80 hover:border-[#302e2a]/90 hover:bg-[#141413]"
               }`}
             >
+              {isActive && <HyperframeCorners size="text-[10px]" />}
               {/* Header */}
               <div>
                 <div className="flex items-center justify-between gap-4 mb-4">

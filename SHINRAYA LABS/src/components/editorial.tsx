@@ -32,8 +32,8 @@ export function PageIntro({
 }) {
   return (
     <section className="relative w-full pt-28 pb-16 md:pt-36 md:pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#d6b799]/5 blur-[160px] pointer-events-none rounded-full" />
-      <div className="relative z-10 max-w-5xl space-y-6">
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#d6b799]/5 blur-[160px] pointer-events-none rounded-full animate-ambient-drift" />
+      <AnimatedContent distance={32} duration={0.85} className="relative z-10 max-w-5xl space-y-6">
         <Eyebrow>{category}</Eyebrow>
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-[#f2eee7] leading-[1.08]">
           {title}{" "}
@@ -46,7 +46,7 @@ export function PageIntro({
         <p className="max-w-2xl text-base sm:text-lg text-[#aaa69e] font-light leading-relaxed">
           {description}
         </p>
-      </div>
+      </AnimatedContent>
     </section>
   );
 }

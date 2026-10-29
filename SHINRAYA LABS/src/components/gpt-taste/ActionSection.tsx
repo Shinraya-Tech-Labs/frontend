@@ -1,17 +1,68 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { github } from "@/lib/projects";
 import { discordUrl } from "@/lib/site";
+import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
+import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 
 export function ActionSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".action-card",
+        { opacity: 0, y: 45, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".action-card",
+            start: "top 85%",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".action-cta-btn",
+        { opacity: 0, y: 18, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          stagger: 0.12,
+          duration: 0.75,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".action-card",
+            start: "top 80%",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative w-full py-36 md:py-48 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-[#302e2a]/60">
-      <div className="relative overflow-hidden rounded-3xl border border-[#302e2a] bg-gradient-to-b from-[#171615] to-[#0d0d0c] p-10 sm:p-16 lg:p-24 shadow-2xl">
-        {/* Glow backdrop */}
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#d6b799]/10 blur-[140px] pointer-events-none rounded-full" />
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#dd3044]/5 blur-[140px] pointer-events-none rounded-full" />
+    <section ref={sectionRef} className="relative w-full py-36 md:py-48 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-[#302e2a]/60">
+      <div className="action-card relative overflow-hidden rounded-3xl border border-[#302e2a] bg-gradient-to-b from-[#171615] to-[#0d0d0c] p-10 sm:p-16 lg:p-24 shadow-2xl">
+        <HyperframeBeam radius={24} duration={9} />
+        <HyperframeCorners size="text-[13px]" />
+
+        {/* Glow backdrop with drift */}
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#d6b799]/10 blur-[140px] pointer-events-none rounded-full animate-ambient-drift" />
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#dd3044]/5 blur-[140px] pointer-events-none rounded-full animate-ambient-drift" />
 
         <div className="relative z-10 max-w-3xl space-y-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#302e2a] bg-[#111110] text-xs font-mono text-[#d6b799] tracking-wider uppercase">
@@ -32,7 +83,7 @@ export function ActionSection() {
               href={discordUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#454FBF] text-white font-semibold text-sm sm:text-base hover:bg-[#3942A8] transition-all duration-300 shadow-xl shadow-[#454FBF]/25 active:scale-95"
+              className="action-cta-btn inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#454FBF] text-white font-semibold text-sm sm:text-base hover:bg-[#3942A8] transition-all duration-300 shadow-xl shadow-[#454FBF]/25 active:scale-95"
             >
               <span>Join Discord (UT9uaeY46e)</span>
               <span aria-hidden="true">↗</span>
@@ -41,7 +92,7 @@ export function ActionSection() {
             <Link
               href="/contribute"
               style={{ color: "#000000" }}
-              className="relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base hover:bg-white transition-all duration-300 shadow-xl shadow-[#d6b799]/15 active:scale-95 group"
+              className="action-cta-btn relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base hover:bg-white transition-all duration-300 shadow-xl shadow-[#d6b799]/15 active:scale-95 group"
             >
               <div
                 aria-hidden="true"
@@ -55,7 +106,7 @@ export function ActionSection() {
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/20 bg-transparent text-[#f2eee7] font-medium text-sm sm:text-base hover:border-white/50 hover:bg-white/5 transition-all duration-300 active:scale-95"
+              className="action-cta-btn inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/20 bg-transparent text-[#f2eee7] font-medium text-sm sm:text-base hover:border-white/50 hover:bg-white/5 transition-all duration-300 active:scale-95"
             >
               GitHub Organization
               <span>↗</span>

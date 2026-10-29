@@ -1,13 +1,57 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
 import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 
 type SimMode = "reasoning" | "quantum" | "neuro";
 
 export function TestbenchSimulator() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [mode, setMode] = useState<SimMode>("reasoning");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".sim-header > *",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.12,
+          duration: 0.85,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".sim-header",
+            start: "top 85%",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".sim-card",
+        { opacity: 0, y: 45, scale: 0.97 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.95,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".sim-card",
+            start: "top 82%",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   // Reasoning Simulator States
   const [noiseRate, setNoiseRate] = useState<number>(25); // 0 - 50%
@@ -72,8 +116,9 @@ export function TestbenchSimulator() {
   };
 
   return (
-    <section className="relative w-full py-28 md:py-40 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-[#302e2a]/60">
-      <div className="mb-14 max-w-3xl space-y-4">
+    <section ref={sectionRef} className="relative w-full py-28 md:py-40 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-[#302e2a]/60">
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#d6b799]/5 blur-[160px] pointer-events-none rounded-full animate-ambient-drift" />
+      <div className="sim-header mb-14 max-w-3xl space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#302e2a] bg-[#111110] text-xs font-mono text-[#d6b799] tracking-wider uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-[#d6b799] animate-pulse" />
           Tactile Scientific Instrument
@@ -121,7 +166,7 @@ export function TestbenchSimulator() {
       </div>
 
       {/* Main Interactive Instrument Card */}
-      <div className="relative overflow-hidden rounded-3xl border border-[#302e2a] bg-[#111110] p-6 sm:p-10 shadow-2xl">
+      <div className="sim-card relative overflow-hidden rounded-3xl border border-[#302e2a] bg-[#111110] p-6 sm:p-10 shadow-2xl">
         <HyperframeBeam radius={24} duration={10} />
         
         {/* MODE 1: REASONING RL SIMULATOR */}
@@ -212,7 +257,11 @@ export function TestbenchSimulator() {
                 <span className="text-xs font-mono text-[#aaa69e] uppercase tracking-wider">
                   Real-Time Evaluation Telemetry
                 </span>
-                <span className="text-xs font-mono text-[#d6b799] animate-pulse">
+                <span className="flex items-center gap-2 text-xs font-mono text-[#d6b799]">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d6b799] opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#d6b799]" />
+                  </span>
                   Active Simulation Stream
                 </span>
               </div>
@@ -457,6 +506,18 @@ export function TestbenchSimulator() {
                     stroke={currentPulse ? "#ff6b7a" : "#d6b799"}
                     strokeWidth="3"
                     className="transition-all duration-300"
+                  />
+
+                  {/* Continuous Laboratory Laser Oscilloscope Sweep Beam */}
+                  <line
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="120"
+                    stroke="#d6b799"
+                    strokeWidth="1.5"
+                    opacity="0.75"
+                    className="animate-oscilloscope-sweep pointer-events-none"
                   />
                 </svg>
 
