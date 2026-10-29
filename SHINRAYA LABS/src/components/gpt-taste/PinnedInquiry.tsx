@@ -70,9 +70,11 @@ export function PinnedInquiry() {
           <div className="pt-4">
             <Link
               href="/about"
-              className="inline-flex items-center gap-3 text-sm font-medium text-[#090909] bg-[#d6b799] hover:bg-white px-6 py-3 rounded-full transition-colors duration-300"
+              style={{ color: "#000000" }}
+              className="inline-flex items-center gap-3 text-sm font-semibold text-black bg-[#d6b799] hover:bg-white px-6 py-3 rounded-full transition-colors duration-300"
             >
-              Read Our Lab Principles <span>→</span>
+              <span style={{ color: "#000000" }}>Read Our Lab Principles</span>
+              <span aria-hidden="true" style={{ color: "#000000" }}>→</span>
             </Link>
           </div>
         </div>

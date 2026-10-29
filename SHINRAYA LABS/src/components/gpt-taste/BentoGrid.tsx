@@ -75,8 +75,10 @@ export function BentoGrid() {
           <div className="absolute inset-0 z-0 opacity-15 group-hover:opacity-25 transition-opacity duration-700 pointer-events-none">
             <Image
               src="/logo.webp"
-              alt="Shinraya Labs"
+              alt=""
+              aria-hidden="true"
               fill
+              sizes="(max-width: 768px) 100vw, 640px"
               className="object-cover object-right-bottom scale-110 group-hover:scale-105 transition-transform duration-700 mix-blend-luminosity"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0b] via-[#0c0c0b]/80 to-transparent" />

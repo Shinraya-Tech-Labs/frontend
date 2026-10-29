@@ -146,7 +146,7 @@ export function TestbenchSimulator() {
                     onClick={() => setAlgorithm("standard")}
                     className={`py-2 px-3 rounded-xl text-xs font-mono border text-left transition-all ${
                       algorithm === "standard"
-                        ? "border-[#dd3044] bg-[#dd3044]/10 text-[#dd3044]"
+                        ? "border-[#ff6b7a] bg-[#ff6b7a]/10 text-[#ff6b7a]"
                         : "border-[#302e2a] text-[#aaa69e] hover:border-[#302e2a]/90"
                     }`}
                   >
@@ -219,7 +219,7 @@ export function TestbenchSimulator() {
                 <div className="p-4 rounded-xl bg-[#141413] border border-[#302e2a]">
                   <span className="text-[11px] font-mono text-[#aaa69e] block mb-1">True GSM8K Pass@1</span>
                   <span className={`text-2xl sm:text-3xl font-mono font-medium ${
-                    Number(reasoningMetrics.accuracy) > 60 ? "text-[#d6b799]" : "text-[#dd3044]"
+                    Number(reasoningMetrics.accuracy) > 60 ? "text-[#d6b799]" : "text-[#ff6b7a]"
                   }`}>
                     {reasoningMetrics.accuracy}%
                   </span>
@@ -228,7 +228,7 @@ export function TestbenchSimulator() {
                 <div className="p-4 rounded-xl bg-[#141413] border border-[#302e2a]">
                   <span className="text-[11px] font-mono text-[#aaa69e] block mb-1">Reward Hack Index</span>
                   <span className={`text-2xl sm:text-3xl font-mono font-medium ${
-                    Number(reasoningMetrics.hackIndex) < 25 ? "text-[#f2eee7]" : "text-[#dd3044]"
+                    Number(reasoningMetrics.hackIndex) < 25 ? "text-[#f2eee7]" : "text-[#ff6b7a]"
                   }`}>
                     {reasoningMetrics.hackIndex}%
                   </span>
@@ -378,7 +378,7 @@ export function TestbenchSimulator() {
                 </div>
                 <div className="flex justify-between">
                   <span>Advantage Check:</span>
-                  <span className="text-[#dd3044]">No Quantum Advantage on Small Systems</span>
+                  <span className="text-[#ff6b7a]">No Quantum Advantage on Small Systems</span>
                 </div>
               </div>
             </div>
@@ -398,10 +398,11 @@ export function TestbenchSimulator() {
                 </p>
                 <button
                   onClick={handleTriggerSpike}
-                  className={`w-full py-3.5 px-4 rounded-xl font-mono text-xs font-medium uppercase tracking-wider transition-all ${
+                  style={{ color: currentPulse ? "#ffffff" : "#000000" }}
+                  className={`w-full py-3.5 px-4 rounded-xl font-mono text-xs font-semibold uppercase tracking-wider transition-all ${
                     currentPulse
-                      ? "bg-[#dd3044] text-white scale-95 shadow-lg shadow-[#dd3044]/30"
-                      : "bg-[#d6b799] text-[#090909] hover:bg-white shadow-md shadow-[#d6b799]/15"
+                      ? "bg-[#c92437] text-white scale-95 shadow-lg shadow-[#c92437]/30"
+                      : "bg-[#d6b799] text-black hover:bg-white shadow-md shadow-[#d6b799]/15"
                   }`}
                 >
                   {currentPulse ? "Pulse Injected (+20 nA)" : "Inject Depolarizing Current Pulse"}
@@ -427,7 +428,7 @@ export function TestbenchSimulator() {
             <div className="lg:col-span-7 p-6 rounded-2xl bg-[#090909] border border-[#302e2a] space-y-4">
               <div className="flex items-center justify-between pb-2 border-b border-[#302e2a]/50 text-xs font-mono">
                 <span className="text-[#aaa69e]">Membrane Voltage Oscilloscope (mV)</span>
-                <span className={currentPulse ? "text-[#dd3044] animate-ping" : "text-[#d6b799]"}>
+                <span className={currentPulse ? "text-[#ff6b7a] animate-ping" : "text-[#d6b799]"}>
                   {currentPulse ? "ACTION POTENTIAL ACTIVE" : "STEADY-STATE"}
                 </span>
               </div>
@@ -448,16 +449,16 @@ export function TestbenchSimulator() {
                         : "M 0,85 Q 125,84 250,85 Q 375,86 500,85"
                     }
                     fill="none"
-                    stroke={currentPulse ? "#dd3044" : "#d6b799"}
+                    stroke={currentPulse ? "#ff6b7a" : "#d6b799"}
                     strokeWidth="3"
                     className="transition-all duration-300"
                   />
                 </svg>
 
-                <div className="absolute top-3 left-3 text-[10px] font-mono text-[#aaa69e]/50">
+                <div className="absolute top-3 left-3 text-[10px] font-mono text-[#aaa69e]">
                   +40 mV
                 </div>
-                <div className="absolute bottom-3 left-3 text-[10px] font-mono text-[#aaa69e]/50">
+                <div className="absolute bottom-3 left-3 text-[10px] font-mono text-[#aaa69e]">
                   -80 mV
                 </div>
               </div>

@@ -59,10 +59,11 @@ export function HeroSection() {
           <div className="pt-4 flex flex-wrap items-center gap-4 sm:gap-6">
             <Link
               href="/research"
+              style={{ color: "#000000" }}
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base tracking-normal hover:bg-white transition-all duration-300 shadow-lg shadow-[#d6b799]/15 active:scale-95 cursor-pointer"
             >
-              <span>Explore Research Archive</span>
-              <span aria-hidden="true" className="text-lg">→</span>
+              <span style={{ color: "#000000" }}>Explore Research Archive</span>
+              <span aria-hidden="true" style={{ color: "#000000" }} className="text-lg">→</span>
             </Link>
 
             <a

@@ -40,10 +40,11 @@ export function ActionSection() {
 
             <Link
               href="/contribute"
+              style={{ color: "#000000" }}
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base hover:bg-white transition-all duration-300 shadow-xl shadow-[#d6b799]/15 active:scale-95"
             >
-              <span>Contribute to the Work</span>
-              <span aria-hidden="true">→</span>
+              <span style={{ color: "#000000" }}>Contribute to the Work</span>
+              <span aria-hidden="true" style={{ color: "#000000" }}>→</span>
             </Link>
 
             <a

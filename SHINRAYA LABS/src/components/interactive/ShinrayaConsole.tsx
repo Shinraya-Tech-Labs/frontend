@@ -69,7 +69,7 @@ export function ShinrayaConsole() {
             <p>Cluster Status: <span className="text-[#d6b799]">ONLINE</span> (12 Nodes Active)</p>
             <p>Reasoning RL Pipeline: <span className="text-[#d6b799]">QUALIFIED</span> (GRPO Baseline + Save/Reload validated)</p>
             <p>Quantum Simulator: <span className="text-[#d6b799]">v0.1.0 CPU RELEASED</span></p>
-            <p>ATLAS Retrieval: <span className="text-[#dd3044]">HYPOTHESIS NOT SUPPORTED</span> (Negative finding published)</p>
+            <p>ATLAS Retrieval: <span className="text-[#ff6b7a]">HYPOTHESIS NOT SUPPORTED</span> (Negative finding published)</p>
             <p>Security Audit: <span className="text-[#d6b799]">0 CVEs VULNERABILITIES</span></p>
           </div>
         );
@@ -82,7 +82,7 @@ export function ShinrayaConsole() {
             <div className="grid grid-cols-2 gap-2 p-2 rounded bg-[#090909] border border-[#302e2a]/50">
               <div>GSM8K Pass@1 (Clean Verifier): <span className="text-[#d6b799]">78.4%</span></div>
               <div>GSM8K Pass@1 (30% Corrupted Verifier): <span className="text-[#d6b799]">64.2%</span> (Robust GRPO)</div>
-              <div>ATLAS HotpotQA Multi-Hop: <span className="text-[#dd3044]">No gain over Cosine Baseline</span></div>
+              <div>ATLAS HotpotQA Multi-Hop: <span className="text-[#ff6b7a]">No gain over Cosine Baseline</span></div>
               <div>Quantum VQE Fidelity: <span className="text-[#d6b799]">0.982</span> (4-Qubit exact simulation)</div>
             </div>
           </div>
@@ -109,7 +109,7 @@ export function ShinrayaConsole() {
               href={discordUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#5865F2] hover:underline"
+              className="text-[#8a9cf5] hover:underline"
             >
               https://discord.gg/{discordInviteCode} ↗
             </a>
@@ -124,7 +124,7 @@ export function ShinrayaConsole() {
 
       default:
         response = (
-          <p className="text-xs font-mono text-[#dd3044]">
+          <p className="text-xs font-mono text-[#ff6b7a]">
             Command not recognized: &apos;{raw}&apos;. Type &apos;help&apos; for list of commands.
           </p>
         );

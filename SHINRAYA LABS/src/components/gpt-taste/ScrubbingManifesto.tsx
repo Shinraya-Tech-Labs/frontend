@@ -17,9 +17,9 @@ export function ScrubbingManifesto() {
       if (words && words.length > 0) {
         gsap.fromTo(
           words,
-          { opacity: 0.15 },
+          { color: "#9e9a91" },
           {
-            opacity: 1,
+            color: "#ffffff",
             stagger: 0.05,
             ease: "none",
             scrollTrigger: {
@@ -80,10 +80,10 @@ export function ScrubbingManifesto() {
         <p
           ref={textRef}
           aria-hidden="true"
-          className="text-xl sm:text-2xl md:text-3xl font-light text-[#f2eee7] leading-relaxed tracking-tight max-w-5xl"
+          className="text-xl sm:text-2xl md:text-3xl font-light text-[#9e9a91] leading-relaxed tracking-tight max-w-5xl"
         >
           {manifestoText.split(" ").map((word, i) => (
-            <span key={i} className="scrub-word inline-block mr-[0.28em] transition-opacity">
+            <span key={i} className="scrub-word inline-block mr-[0.28em] transition-colors text-[#9e9a91]">
               {word}
             </span>
           ))}
