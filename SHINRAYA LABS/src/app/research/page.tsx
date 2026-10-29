@@ -24,6 +24,10 @@ export default function Research() {
       "name": p.name,
       "headline": p.question,
       "description": p.summary,
+      "author": {
+        "@type": "Person",
+        "name": p.authors,
+      },
       "sameAs": repoUrl(p.repo),
     })),
   };
@@ -83,6 +87,10 @@ export default function Research() {
                 <p className="text-lg sm:text-xl font-light text-[#d6b799]/90 italic font-serif">
                   &ldquo;{p.question}&rdquo;
                 </p>
+                <div className="flex flex-wrap items-center gap-2 pt-1 text-xs font-mono text-[#aaa69e]">
+                  <span className="text-[#d6b799]/80 uppercase tracking-wider text-[11px]">Author:</span>
+                  <span className="text-[#f2eee7]">{p.authors}</span>
+                </div>
               </div>
 
               <div className="flex flex-col items-start md:items-end gap-3 shrink-0">

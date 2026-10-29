@@ -15,6 +15,7 @@ export type ResearchProject = {
   branch: string;
   report?: string;
   resultLabel: string;
+  authors: string;
 };
 
 // Editorial summaries of the public READMEs, reviewed 2026-10-11.
@@ -38,6 +39,7 @@ export const research: ResearchProject[] = [
     branch: "codex/robust-reasoning",
     report: "docs/final-report.md",
     resultLabel: "Pilot & protocol",
+    authors: "Shaurya Sanyal",
   },
   {
     slug: "aci-architecture-framework",
@@ -57,6 +59,7 @@ export const research: ResearchProject[] = [
     branch: "main",
     report: "docs/papers/The_Softmax_Inundation_Theorem.pdf",
     resultLabel: "Formal bound & probe",
+    authors: "Shaurya Sanyal (Architecture & Proofs) · Raja Dharma Tej Maddala (Concept Attribution)",
   },
   {
     slug: "quantum-advantage-simulator",
@@ -76,6 +79,7 @@ export const research: ResearchProject[] = [
     branch: "main",
     report: "docs/FINAL_RESEARCH_REPORT.md",
     resultLabel: "Simulator findings",
+    authors: "Shaurya Sanyal",
   },
   {
     slug: "atlas",
@@ -95,6 +99,7 @@ export const research: ResearchProject[] = [
     branch: "main",
     report: "docs/MANIFOLD_V2_REPORT.md",
     resultLabel: "Negative result",
+    authors: "Shaurya Sanyal",
   },
   {
     slug: "neurosim",
@@ -113,6 +118,7 @@ export const research: ResearchProject[] = [
     repo: "nuerosim",
     branch: "main",
     resultLabel: "Implementation notes",
+    authors: "Shaurya Sanyal",
   },
 ];
 
