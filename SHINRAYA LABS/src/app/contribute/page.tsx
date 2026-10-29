@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { github, repoUrl } from "@/lib/projects";
 import { PageIntro, Eyebrow, ExternalLink, CollaborationCTA } from "@/components/editorial";
+import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
+import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 
 export const metadata: Metadata = {
   title: "Contribute & Collaborate",
@@ -21,8 +23,10 @@ export default function Contribute() {
 
       {/* Getting Started Pipeline */}
       <section className="relative w-full py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto space-y-16">
-        <div className="p-8 sm:p-12 lg:p-16 rounded-3xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] space-y-12">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#302e2a]/60">
+        <div className="group relative overflow-hidden p-8 sm:p-12 lg:p-16 rounded-3xl border border-[#302e2a] bg-gradient-to-b from-[#141413] to-[#0c0c0b] space-y-12">
+          <HyperframeBeam radius={24} duration={9} />
+          <HyperframeCorners size="text-[13px]" />
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#302e2a]/60">
             <div className="space-y-3">
               <Eyebrow>Contribution Pipeline</Eyebrow>
               <h2 className="text-3xl sm:text-4xl font-normal text-[#f2eee7] tracking-tight">
@@ -96,8 +100,10 @@ export default function Contribute() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
-              <div className="space-y-3">
+            <div className="group relative overflow-hidden p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
+              <HyperframeBeam radius={16} duration={8} />
+              <HyperframeCorners size="text-[11px]" />
+              <div className="space-y-3 relative z-10">
                 <span className="text-xs font-mono text-[#d6b799] uppercase tracking-wider">
                   Empirical Science
                 </span>
@@ -108,15 +114,17 @@ export default function Contribute() {
                   Rerun an evaluation protocol on your own hardware. Record hardware discrepancies, seed variance, and whether conclusions hold.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#302e2a]/50">
+              <div className="pt-4 border-t border-[#302e2a]/50 relative z-10">
                 <ExternalLink href={`${repoUrl("ATLAS")}/issues`}>
                   ATLAS Issue Tracker
                 </ExternalLink>
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
-              <div className="space-y-3">
+            <div className="group relative overflow-hidden p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
+              <HyperframeBeam radius={16} duration={9} />
+              <HyperframeCorners size="text-[11px]" />
+              <div className="space-y-3 relative z-10">
                 <span className="text-xs font-mono text-[#d6b799] uppercase tracking-wider">
                   Software Infrastructure
                 </span>
@@ -127,15 +135,17 @@ export default function Contribute() {
                   Refactor runtime tracing, increase test coverage, or benchmark execution replay performance in AgentWatch and PulseStack.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#302e2a]/50">
+              <div className="pt-4 border-t border-[#302e2a]/50 relative z-10">
                 <ExternalLink href={`${repoUrl("AgentWatch")}/issues`}>
                   AgentWatch Issue Tracker
                 </ExternalLink>
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
-              <div className="space-y-3">
+            <div className="group relative overflow-hidden p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
+              <HyperframeBeam radius={16} duration={10} />
+              <HyperframeCorners size="text-[11px]" />
+              <div className="space-y-3 relative z-10">
                 <span className="text-xs font-mono text-[#d6b799] uppercase tracking-wider">
                   Documentation & Auditing
                 </span>
@@ -146,7 +156,7 @@ export default function Contribute() {
                   Document hidden assumptions, clarify setup requirements, or point out unverified claims in our specifications.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#302e2a]/50">
+              <div className="pt-4 border-t border-[#302e2a]/50 relative z-10">
                 <ExternalLink href={`${repoUrl("quantum-advantage-simulator")}/issues`}>
                   Simulator Issue Tracker
                 </ExternalLink>
@@ -156,7 +166,8 @@ export default function Contribute() {
         </div>
 
         {/* Contribution Guidelines Box */}
-        <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#141413]/60 space-y-4">
+        <div className="relative overflow-hidden p-8 rounded-2xl border border-[#302e2a] bg-[#141413]/60 space-y-4">
+          <HyperframeCorners size="text-[11px]" />
           <Eyebrow>Project-Specific Guidelines</Eyebrow>
           <h3 className="text-xl font-normal text-[#f2eee7]">
             Review repository guidance before opening pull requests.

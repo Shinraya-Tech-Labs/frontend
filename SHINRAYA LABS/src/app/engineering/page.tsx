@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { engineering, github, repoUrl } from "@/lib/projects";
 import { PageIntro, ExternalLink, CollaborationCTA, Eyebrow } from "@/components/editorial";
+import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
+import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
+import { QuantumManifold3D } from "@/components/interactive/QuantumManifold3D";
 
 export const metadata: Metadata = {
   title: "Engineering Systems",
@@ -55,9 +58,11 @@ export default function Engineering() {
                 .map((p) => (
                   <div
                     key={p.repo}
-                    className="p-7 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 hover:shadow-[0_0_30px_-10px_rgba(214,183,153,0.1)] transition-all duration-500"
+                    className="group relative overflow-hidden p-7 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 hover:shadow-[0_0_30px_-10px_rgba(214,183,153,0.1)] transition-all duration-500"
                   >
-                    <div className="space-y-4">
+                    <HyperframeBeam radius={16} duration={8} />
+                    <HyperframeCorners size="text-[11px]" />
+                    <div className="space-y-4 relative z-10">
                       <div className="flex items-center justify-between gap-3">
                         <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-[#302e2a]/50 text-[#d6b799] border border-[#302e2a]">
                           {p.language}
@@ -76,9 +81,15 @@ export default function Engineering() {
                       <div className="p-3 rounded-xl bg-[#090909]/80 border border-[#302e2a]/50 text-xs text-[#aaa69e] font-mono leading-relaxed">
                         {p.note}
                       </div>
+
+                      {p.name === "PulseStack" && (
+                        <div className="pt-2">
+                          <QuantumManifold3D className="w-full" />
+                        </div>
+                      )}
                     </div>
 
-                    <div className="pt-4 border-t border-[#302e2a]/60">
+                    <div className="pt-4 border-t border-[#302e2a]/60 relative z-10">
                       <ExternalLink href={repoUrl(p.repo)}>
                         Source Code Repository
                       </ExternalLink>
@@ -90,7 +101,8 @@ export default function Engineering() {
         ))}
 
         {/* Verification transparency note */}
-        <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#141413]/60 space-y-4 max-w-4xl">
+        <div className="relative overflow-hidden p-8 rounded-2xl border border-[#302e2a] bg-[#141413]/60 space-y-4 max-w-4xl">
+          <HyperframeCorners size="text-[11px]" />
           <Eyebrow>Repository Availability Notice</Eyebrow>
           <h3 className="text-xl font-normal text-[#f2eee7]">
             LCI (Lifecycle Integration)

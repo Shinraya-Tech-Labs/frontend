@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { research, repoUrl, reportUrl, verifiedOn } from "@/lib/projects";
 import { PageIntro, ExternalLink, CollaborationCTA } from "@/components/editorial";
+import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
+import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
+import { QuantumManifold3D } from "@/components/interactive/QuantumManifold3D";
 
 export const metadata: Metadata = {
   title: "Research Programs",
@@ -63,10 +66,13 @@ export default function Research() {
           <article
             key={p.slug}
             id={p.slug}
-            className="scroll-mt-36 p-8 sm:p-12 rounded-3xl border border-[#302e2a] bg-[#111110] transition-all duration-500 hover:border-[#d6b799]/40 hover:shadow-[0_0_40px_-15px_rgba(214,183,153,0.12)] space-y-8"
+            className="group relative overflow-hidden scroll-mt-36 p-8 sm:p-12 rounded-3xl border border-[#302e2a] bg-[#111110] transition-all duration-500 hover:border-[#d6b799]/40 hover:shadow-[0_0_40px_-15px_rgba(214,183,153,0.12)] space-y-8"
           >
+            <HyperframeBeam radius={24} duration={8} />
+            <HyperframeCorners size="text-[12px]" />
+
             {/* Header info */}
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-6 border-b border-[#302e2a]/60">
+            <div className="relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-6 pb-6 border-b border-[#302e2a]/60">
               <div className="space-y-3">
                 <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
                   {p.field}
@@ -97,7 +103,7 @@ export default function Research() {
             </div>
 
             {/* Structured Evidence Matrix */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
               <div className="p-6 rounded-2xl bg-[#0c0c0b] border border-[#302e2a]/60 space-y-3">
                 <span className="text-xs font-mono uppercase tracking-wider text-[#aaa69e]">
                   Scope & Methods
@@ -114,6 +120,12 @@ export default function Research() {
                 <p className="text-sm text-[#f2eee7] font-light leading-relaxed">
                   {p.evidence}
                 </p>
+                {/* Embedded 3D Quantum Manifold for Quantum Simulator */}
+                {p.slug === "quantum-advantage-simulator" && (
+                  <div className="pt-2">
+                    <QuantumManifold3D className="w-full" />
+                  </div>
+                )}
               </div>
 
               <div className="p-6 rounded-2xl bg-[#0c0c0b] border border-[#dd3044]/30 space-y-3">

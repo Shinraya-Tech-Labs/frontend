@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageIntro, Eyebrow, CollaborationCTA } from "@/components/editorial";
+import { QuantumBlochSphere } from "@/components/interactive/QuantumBlochSphere";
+import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
+import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 
 export const metadata: Metadata = {
   title: "About",
@@ -38,18 +40,11 @@ export default function About() {
       <section className="relative w-full py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          <div className="lg:col-span-5 relative flex justify-center">
-            <div className="relative w-[300px] sm:w-[380px] aspect-square rounded-3xl border border-[#302e2a] bg-[#111110] p-6 shadow-2xl">
-              <div className="relative w-full h-full overflow-hidden rounded-2xl bg-[#090909]">
-                <Image
-                  src="/logo.webp"
-                  alt="Shinraya Tech Labs Emblem"
-                  fill
-                  className="object-cover object-center filter contrast-125 mix-blend-luminosity"
-                  sizes="(max-width: 768px) 300px, 380px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090909] via-transparent to-transparent opacity-60" />
-              </div>
+          <div className="lg:col-span-5 relative flex justify-center w-full max-w-[420px] mx-auto lg:mx-0">
+            <div className="relative w-full rounded-3xl group">
+              <HyperframeBeam radius={24} duration={8} />
+              <HyperframeCorners size="text-[13px]" />
+              <QuantumBlochSphere className="w-full" />
             </div>
           </div>
 
@@ -83,8 +78,10 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
-            <div className="space-y-4">
+          <div className="relative overflow-hidden p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors group">
+            <HyperframeBeam radius={16} duration={8} />
+            <HyperframeCorners size="text-[11px]" />
+            <div className="space-y-4 relative z-10">
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
                 Inquiry
               </span>
@@ -95,13 +92,15 @@ export default function About() {
                 A plausible mechanism is an invitation to test. Strict baselines, ablation studies, and controlled noise comparisons establish whether an algorithmic variant produces an actual advantage.
               </p>
             </div>
-            <div className="pt-4 border-t border-[#302e2a]/50 font-mono text-xs text-[#aaa69e]/60">
+            <div className="pt-4 border-t border-[#302e2a]/50 font-mono text-xs text-[#aaa69e]/60 relative z-10">
               Hypothesis Driven
             </div>
           </div>
 
-          <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
-            <div className="space-y-4">
+          <div className="relative overflow-hidden p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors group">
+            <HyperframeBeam radius={16} duration={9} />
+            <HyperframeCorners size="text-[11px]" />
+            <div className="space-y-4 relative z-10">
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
                 Transparency
               </span>
@@ -112,13 +111,15 @@ export default function About() {
                 Public repositories make execution packages, checkpoints, and telemetry logs openly available. Negative outcomes and unsupported hypotheses are published with equal prominence.
               </p>
             </div>
-            <div className="pt-4 border-t border-[#302e2a]/50 font-mono text-xs text-[#aaa69e]/60">
+            <div className="pt-4 border-t border-[#302e2a]/50 font-mono text-xs text-[#aaa69e]/60 relative z-10">
               Open Code & Data
             </div>
           </div>
 
-          <div className="p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors">
-            <div className="space-y-4">
+          <div className="relative overflow-hidden p-8 rounded-2xl border border-[#302e2a] bg-[#111110] flex flex-col justify-between space-y-6 hover:border-[#d6b799]/40 transition-colors group">
+            <HyperframeBeam radius={16} duration={10} />
+            <HyperframeCorners size="text-[11px]" />
+            <div className="space-y-4 relative z-10">
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
                 Verification
               </span>
@@ -129,7 +130,7 @@ export default function About() {
                 Configurations, random seeds, software manifests, and evaluation boundaries enable peer researchers to rerun and challenge our findings independently.
               </p>
             </div>
-            <div className="pt-4 border-t border-[#302e2a]/50 font-mono text-xs text-[#aaa69e]/60">
+            <div className="pt-4 border-t border-[#302e2a]/50 font-mono text-xs text-[#aaa69e]/60 relative z-10">
               Deterministic Seeds
             </div>
           </div>

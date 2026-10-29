@@ -33,12 +33,32 @@ html.limit-break-active .animate-marquee {
 html.limit-break-active .animate-hyper-shimmer {
   animation-duration: 2s !important;
 }
-html.limit-break-active .bento-card {
-  box-shadow: 0 0 35px -10px rgba(214, 183, 153, 0.3);
-  border-color: rgba(214, 183, 153, 0.5) !important;
+html.limit-break-active article,
+html.limit-break-active .bento-card,
+html.limit-break-active .action-card {
+  box-shadow: 0 0 40px -10px rgba(214, 183, 153, 0.35) !important;
+  border-color: rgba(214, 183, 153, 0.6) !important;
+}
+html.limit-break-active h1 span.font-serif,
+html.limit-break-active h2 span.font-serif {
+  text-shadow: 0 0 25px rgba(214, 183, 153, 0.7);
 }
 html.limit-break-active .animate-ambient-drift {
   animation-duration: 6s !important;
+}
+@keyframes limitBreakGlow {
+  0%, 100% {
+    border-color: rgba(214, 183, 153, 0.4);
+    box-shadow: 0 0 25px -5px rgba(214, 183, 153, 0.25);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 45px -5px rgba(214, 183, 153, 0.5), 0 0 20px rgba(221, 48, 68, 0.25);
+  }
+}
+html.limit-break-active article,
+html.limit-break-active .group:hover {
+  animation: limitBreakGlow 3s ease-in-out infinite;
 }
 
 @keyframes hyperShimmer {
