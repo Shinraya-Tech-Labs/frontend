@@ -28,6 +28,7 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
   const [phi, setPhi] = useState<number>(Math.PI / 4);
   const [isPrecessing, setIsPrecessing] = useState<boolean>(true);
   const [fps, setFps] = useState<number>(60);
+  const [webglError, setWebglError] = useState<boolean>(false);
 
   // References to synchronize state with Three.js animation frame loop
   const targetThetaRef = useRef<number>(Math.PI / 3);
@@ -60,16 +61,28 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
     let animationFrameId: number;
     let isDisposed = false;
 
-    // Renderer setup
+    // Check system prefers-reduced-motion
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Renderer setup with safe WebGL try/catch fallback
     const width = container.clientWidth || 360;
     const height = container.clientHeight || 360;
 
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      antialias: true,
-      alpha: true,
-      powerPreference: "high-performance",
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        alpha: true,
+        powerPreference: "high-performance",
+      });
+    } catch {
+      setWebglError(true);
+      return;
+    }
+
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
@@ -293,10 +306,10 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
       }
 
       const isOverdrive = isLimitBreakRef.current;
-      const speedMultiplier = isOverdrive ? 3.2 : 1.0;
+      const speedMultiplier = prefersReduced ? 0 : (isOverdrive ? 3.2 : 1.0);
 
       // Smooth Rotation Damping (Lerp)
-      if (!isDragging) {
+      if (!isDragging && !prefersReduced) {
         targetRotationY += 0.004 * speedMultiplier;
       }
       currentRotationX += (targetRotationX - currentRotationX) * 0.08;
@@ -306,12 +319,14 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
       sphereGroup.rotation.y = currentRotationY;
 
       // Spin Core in opposite direction
-      coreMesh.rotation.y -= 0.012 * speedMultiplier;
-      coreMesh.rotation.z += 0.008 * speedMultiplier;
-      innerCoreMesh.rotation.x += 0.01 * speedMultiplier;
+      if (!prefersReduced) {
+        coreMesh.rotation.y -= 0.012 * speedMultiplier;
+        coreMesh.rotation.z += 0.008 * speedMultiplier;
+        innerCoreMesh.rotation.x += 0.01 * speedMultiplier;
+      }
 
       // Larmor Precession or Smooth State Orientation
-      if (isPrecessingRef.current) {
+      if (isPrecessingRef.current && !prefersReduced) {
         targetPhiRef.current += 0.018 * speedMultiplier;
       }
 
@@ -421,12 +436,27 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
       ref={containerRef}
       className={`relative w-full h-[400px] sm:h-[440px] rounded-3xl border border-[#302e2a] bg-[#0c0c0b] p-5 shadow-2xl backdrop-blur-xl flex flex-col justify-between overflow-hidden select-none ${className}`}
     >
-      {/* 3D WebGL Canvas with Pointer Controls */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing z-0"
-        title="Interactive 3D Bloch Sphere - Drag to rotate freely in 3D"
-      />
+      {/* 3D WebGL Canvas or 2D Accessible Fallback */}
+      {webglError ? (
+        <div className="absolute inset-0 z-0 flex flex-col items-center justify-center p-6 text-center bg-[#0c0c0b]">
+          <svg viewBox="0 0 200 200" className="w-44 h-44 text-[#d6b799]/40 mb-3" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <circle cx="100" cy="100" r="75" strokeDasharray="4 4" />
+            <ellipse cx="100" cy="100" rx="75" ry="24" />
+            <line x1="100" y1="25" x2="100" y2="175" />
+            <line x1="25" y1="100" x2="175" y2="100" />
+            <line x1="100" y1="100" x2="145" y2="55" stroke="#dd3044" strokeWidth="2.5" />
+            <circle cx="145" cy="55" r="3" fill="#dd3044" />
+          </svg>
+          <div className="text-xs font-mono text-[#d6b799]">WebGL Unavailable // 2D Projection Fallback</div>
+          <div className="text-[10px] font-mono text-[#aaa69e] mt-1">Reduced motion or hardware fallback mode active</div>
+        </div>
+      ) : (
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing z-0"
+          title="Interactive 3D Bloch Sphere - Drag to rotate freely in 3D"
+        />
+      )}
 
       {/* Top HUD Telemetry Bar */}
       <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-[#aaa69e] bg-[#090909]/85 px-3.5 py-2 rounded-xl border border-[#302e2a]/70 backdrop-blur-md">

@@ -28,7 +28,7 @@ export function Footer() {
       </div>
       <div className="footer-bottom flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-[#302e2a]/40 text-xs font-mono text-[#aaa69e]">
         <span>© {new Date().getFullYear()} Shinraya Tech Labs</span>
-        <span className="text-[#d6b799]">Research Beyond Assumptions.</span>
+        <span className="text-[#d6b799]">Privacy: Zero cookies · Zero trackers · Pure static client</span>
         <div className="flex items-center gap-6">
           <a
             href={discordUrl}

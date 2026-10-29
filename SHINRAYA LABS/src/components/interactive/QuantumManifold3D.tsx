@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { useLimitBreak } from "@/context/LimitBreakContext";
 
@@ -9,6 +9,7 @@ export function QuantumManifold3D({ className = "" }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { isLimitBreak } = useLimitBreak();
   const isLimitBreakRef = useRef<boolean>(isLimitBreak);
+  const [webglError, setWebglError] = useState<boolean>(false);
 
   useEffect(() => {
     isLimitBreakRef.current = isLimitBreak;
@@ -22,15 +23,25 @@ export function QuantumManifold3D({ className = "" }: { className?: string }) {
     let animationFrameId: number;
     let isDisposed = false;
 
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const width = container.clientWidth || 240;
     const height = container.clientHeight || 180;
 
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      antialias: true,
-      alpha: true,
-      powerPreference: "high-performance",
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        alpha: true,
+        powerPreference: "high-performance",
+      });
+    } catch {
+      setWebglError(true);
+      return;
+    }
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
@@ -121,9 +132,9 @@ export function QuantumManifold3D({ className = "" }: { className?: string }) {
       animationFrameId = requestAnimationFrame(animate);
 
       const isOverdrive = isLimitBreakRef.current;
-      const speedMult = isOverdrive ? 3.0 : 1.0;
+      const speedMult = prefersReduced ? 0 : (isOverdrive ? 3.0 : 1.0);
 
-      if (!isDragging) {
+      if (!isDragging && !prefersReduced) {
         targetRotY += 0.008 * speedMult;
         targetRotX += 0.004 * speedMult;
       }
@@ -173,11 +184,22 @@ export function QuantumManifold3D({ className = "" }: { className?: string }) {
       ref={containerRef}
       className={`relative w-full h-[180px] rounded-xl overflow-hidden border border-[#302e2a]/50 bg-[#090909]/80 select-none ${className}`}
     >
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full cursor-grab active:cursor-grabbing"
-        title="Interactive 3D Quantum Topology - Drag to rotate"
-      />
+      {webglError ? (
+        <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center">
+          <svg viewBox="0 0 120 120" className="w-20 h-20 text-[#d6b799]/40 mb-2" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <ellipse cx="60" cy="60" rx="40" ry="20" />
+            <ellipse cx="60" cy="60" rx="20" ry="40" strokeDasharray="3 3" />
+            <circle cx="60" cy="60" r="10" stroke="#dd3044" />
+          </svg>
+          <span className="text-[10px] font-mono text-[#d6b799]">Topology 2D Projection</span>
+        </div>
+      ) : (
+        <canvas
+          ref={canvasRef}
+          className="w-full h-full cursor-grab active:cursor-grabbing"
+          title="Interactive 3D Quantum Topology - Drag to rotate"
+        />
+      )}
       <div className="absolute top-2 left-2 pointer-events-none text-[10px] font-mono text-[#d6b799] bg-[#0c0c0b]/80 px-2 py-0.5 rounded border border-[#302e2a]/60">
         TORUS KNOT LATTICE [3D]
       </div>
