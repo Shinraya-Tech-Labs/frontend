@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Particles from "@/components/approved/Particles";
 import TiltedCard from "@/components/approved/TiltedCard";
+import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
+import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 import { discordUrl, discordInviteCode } from "@/lib/site";
 
 export function HeroSection() {
@@ -60,10 +62,14 @@ export function HeroSection() {
             <Link
               href="/research"
               style={{ color: "#000000" }}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base tracking-normal hover:bg-white transition-all duration-300 shadow-lg shadow-[#d6b799]/15 active:scale-95 cursor-pointer"
+              className="relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base tracking-normal hover:bg-white transition-all duration-300 shadow-lg shadow-[#d6b799]/15 active:scale-95 cursor-pointer group"
             >
-              <span style={{ color: "#000000" }}>Explore Research Archive</span>
-              <span aria-hidden="true" style={{ color: "#000000" }} className="text-lg">→</span>
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 -translate-x-full animate-hyper-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"
+              />
+              <span style={{ color: "#000000" }} className="relative z-10">Explore Research Archive</span>
+              <span aria-hidden="true" style={{ color: "#000000" }} className="relative z-10 text-lg transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
 
             <a
@@ -101,6 +107,9 @@ export function HeroSection() {
             className="rounded-3xl cursor-grab active:cursor-grabbing"
           >
             <div className="relative w-full h-full rounded-3xl border border-[#302e2a] bg-[#111110] p-6 shadow-2xl backdrop-blur-xl flex flex-col justify-between overflow-hidden">
+              <HyperframeBeam radius={24} duration={8} />
+              <HyperframeCorners size="text-[13px]" />
+
               <div className="relative w-full h-[280px] overflow-hidden rounded-2xl bg-[#090909]">
                 <Image
                   src="/logo.webp"

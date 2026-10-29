@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
+import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 
 type SimMode = "reasoning" | "quantum" | "neuro";
 
@@ -120,6 +122,7 @@ export function TestbenchSimulator() {
 
       {/* Main Interactive Instrument Card */}
       <div className="relative overflow-hidden rounded-3xl border border-[#302e2a] bg-[#111110] p-6 sm:p-10 shadow-2xl">
+        <HyperframeBeam radius={24} duration={10} />
         
         {/* MODE 1: REASONING RL SIMULATOR */}
         {mode === "reasoning" && (
@@ -243,7 +246,8 @@ export function TestbenchSimulator() {
               </div>
 
               {/* Dynamic SVG Visualizer */}
-              <div className="h-44 w-full relative border border-[#302e2a]/60 rounded-xl p-3 bg-[#0c0c0b] flex flex-col justify-between">
+              <div className="h-44 w-full relative border border-[#302e2a]/60 rounded-xl p-3 bg-[#0c0c0b] flex flex-col justify-between overflow-hidden">
+                <HyperframeCorners size="text-[10px]" />
                 <div className="flex justify-between text-[11px] font-mono text-[#aaa69e]">
                   <span>Policy Trajectory (GSM8K vs Reward Exploit)</span>
                   <span>Steps 0 - {stepCount}</span>
@@ -435,6 +439,7 @@ export function TestbenchSimulator() {
 
               {/* Dynamic Oscilloscope Waveform */}
               <div className="h-44 w-full bg-[#070706] rounded-xl border border-[#302e2a] relative overflow-hidden flex items-center justify-center">
+                <HyperframeCorners size="text-[10px]" />
                 <svg className="w-full h-full px-4" viewBox="0 0 500 120" preserveAspectRatio="none">
                   {/* Grid overlay */}
                   <line x1="0" y1="60" x2="500" y2="60" stroke="#222" strokeWidth="1" />

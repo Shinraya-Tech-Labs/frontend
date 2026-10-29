@@ -41,10 +41,14 @@ export function ActionSection() {
             <Link
               href="/contribute"
               style={{ color: "#000000" }}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base hover:bg-white transition-all duration-300 shadow-xl shadow-[#d6b799]/15 active:scale-95"
+              className="relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base hover:bg-white transition-all duration-300 shadow-xl shadow-[#d6b799]/15 active:scale-95 group"
             >
-              <span style={{ color: "#000000" }}>Contribute to the Work</span>
-              <span aria-hidden="true" style={{ color: "#000000" }}>→</span>
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 -translate-x-full animate-hyper-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"
+              />
+              <span style={{ color: "#000000" }} className="relative z-10">Contribute to the Work</span>
+              <span aria-hidden="true" style={{ color: "#000000" }} className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
 
             <a

@@ -13,6 +13,23 @@
   animation-play-state: paused;
 }
 
+@keyframes hyperframeBeam {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -100; }
+}
+.animate-hyperframe-beam {
+  stroke-dasharray: 22 78;
+  animation: hyperframeBeam 7s linear infinite;
+}
+
+@keyframes hyperShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+.animate-hyper-shimmer {
+  animation: hyperShimmer 4.5s ease-in-out infinite;
+}
+
 .motion-card {
   min-width: 0;
   height: 100%;
@@ -30,6 +47,10 @@
     visibility: visible !important;
     transform: none !important;
     filter: none !important;
+  }
+  .animate-hyperframe-beam,
+  .animate-hyper-shimmer {
+    animation: none !important;
   }
 }
 
