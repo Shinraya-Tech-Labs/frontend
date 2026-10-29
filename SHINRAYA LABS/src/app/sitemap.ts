@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 import { navigation, siteUrl } from "@/lib/site";
+
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return navigation.map(({ href }) => ({
     url: new URL(href, siteUrl).href,
