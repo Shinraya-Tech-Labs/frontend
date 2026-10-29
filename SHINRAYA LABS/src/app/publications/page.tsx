@@ -24,7 +24,7 @@ export default function Publications() {
     <div className="relative w-full min-h-screen bg-[#090909] text-[#f2eee7]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
 
       <PageIntro
