@@ -40,6 +40,25 @@ export const research: ResearchProject[] = [
     resultLabel: "Pilot & protocol",
   },
   {
+    slug: "aci-architecture-framework",
+    name: "ACI Architecture Framework",
+    field: "Agent memory & attention bounds",
+    question: "How can long-horizon agents bound context so tool output stops crowding out the goal?",
+    summary:
+      "Tiered generational memory and attention-weighted eviction for multi-turn autonomous agents, with formal bounds on softmax dilution.",
+    scope:
+      "Softmax Inundation Bound, Generational Context (Gen-0/1/2), Attention-Weighted Eviction (AWE), deterministic CCB-001 simulation, and live transformer attention probing on Qwen2.5-0.5B.",
+    status: "v0.1.0 reference package · live probe validated",
+    evidence:
+      "The repository documents formal bounds, 11/11 passing unit tests, -97.5% token compression in CCB-001, 8/8 CIC governance scenarios, and empirical Qwen2.5-0.5B eager forward-pass attention retention.",
+    limitations:
+      "Softmax inundation bounds assume uniform projection energy bounds; live transformer measurements were performed on 0.5B parameters; SWE-bench verified evaluations on frontier neural models remain in progress.",
+    repo: "https://github.com/Team-Auralis/ACI-Architecture-Framework",
+    branch: "main",
+    report: "docs/papers/The_Softmax_Inundation_Theorem.pdf",
+    resultLabel: "Formal bound & probe",
+  },
+  {
     slug: "quantum-advantage-simulator",
     name: "Quantum Advantage Simulator",
     field: "Quantum & classical computation",
@@ -179,8 +198,13 @@ export const engineering: EngineeringProject[] = [
     language: "Computer vision",
   },
 ];
-export const repoUrl = (repo: string) => `${github}/${repo}`;
-export const reportUrl = (p: ResearchProject) =>
-  p.report
-    ? `${repoUrl(p.repo)}/blob/${p.branch}/${p.report}`
-    : `${repoUrl(p.repo)}#readme`;
+
+export const repoUrl = (repo: string) =>
+  repo.startsWith("http") ? repo : `${github}/${repo}`;
+
+export const reportUrl = (p: ResearchProject) => {
+  const base = repoUrl(p.repo);
+  return p.report
+    ? `${base}/blob/${p.branch}/${p.report}`
+    : `${base}#readme`;
+};

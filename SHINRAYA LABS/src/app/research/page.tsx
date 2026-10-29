@@ -8,7 +8,7 @@ import { QuantumManifold3D } from "@/components/interactive/QuantumManifold3D";
 export const metadata: Metadata = {
   title: "Research Programs",
   description:
-    "Experimental protocols, scope, measured evidence, and explicit limitations across reasoning, retrieval, quantum simulation, and computational neuroscience.",
+    "Experimental protocols, scope, measured evidence, and explicit limitations across reasoning, agent memory bounds, retrieval, quantum simulation, and computational neuroscience.",
   alternates: { canonical: "/research" },
 };
 
@@ -18,7 +18,7 @@ export default function Research() {
     "@type": "CollectionPage",
     "name": "Shinraya Tech Labs Research Directory",
     "description":
-      "Independent experimental research across reasoning under imperfect rewards, geometric retrieval, quantum simulation, and biophysical neurodynamics.",
+      "Independent experimental research across reasoning under imperfect rewards, agent attention bounds, geometric retrieval, quantum simulation, and biophysical neurodynamics.",
     "hasPart": research.map((p) => ({
       "@type": "ScholarlyArticle",
       "name": p.name,
@@ -39,7 +39,7 @@ export default function Research() {
         category="Empirical Research Programs"
         title="Follow the question."
         italic="Keep the evidence."
-        description="Four independent lines of inquiry into machine reasoning, quantum boundaries, geometric representations, and biophysical networks. Each project makes its scope and limitations explicit."
+        description="Five independent lines of inquiry into machine reasoning, agent memory bounds, quantum boundaries, geometric representations, and biophysical networks. Each project makes its scope and limitations explicit."
       />
 
       {/* Jump Anchor Bar */}
@@ -124,6 +124,27 @@ export default function Research() {
                 {p.slug === "quantum-advantage-simulator" && (
                   <div className="pt-2">
                     <QuantumManifold3D className="w-full" />
+                  </div>
+                )}
+                {/* Embedded Telemetry for ACI Architecture Framework */}
+                {p.slug === "aci-architecture-framework" && (
+                  <div className="pt-3 font-mono text-xs space-y-2 border-t border-[#302e2a]/40 mt-3">
+                    <div className="flex justify-between items-center text-[#aaa69e]">
+                      <span>Gen-0 Ephemeral</span>
+                      <span className="text-[#d6b799]">TTL & Distillation (-97.5%)</span>
+                    </div>
+                    <div className="flex justify-between items-center text-[#aaa69e]">
+                      <span>Gen-1 Evaporative</span>
+                      <span className="text-[#f2eee7]">AWE Attention Cache</span>
+                    </div>
+                    <div className="flex justify-between items-center text-[#aaa69e]">
+                      <span>Gen-2 Tenured</span>
+                      <span className="text-[#d6b799]">Pinned Invariants</span>
+                    </div>
+                    <div className="flex justify-between items-center text-[#aaa69e] pt-1 border-t border-[#302e2a]/30">
+                      <span>Live Qwen2.5-0.5B Probe</span>
+                      <span className="text-[#d6b799]">Stable ~0.406 Share</span>
+                    </div>
                   </div>
                 )}
               </div>
