@@ -2,14 +2,16 @@
   {
     "repo": "nuerosim",
     "branch": "main",
-    "sha": "b46a795195baa01cf2dcee562e2b9983cce8bf1d",
+    "sha": "8cd99a9007da23148d0d7264b6d4f52a04a5b822",
     "truncated": false,
-    "paths": []
+    "paths": [
+      "docs/validation/web-dependency-licenses.json"
+    ]
   },
   {
     "repo": "AgentWatch",
     "branch": "main",
-    "sha": "5429f8932edb885b98e677aaeaa3bceca44c6307",
+    "sha": "a58b63630cd0b285cb96bec8f83fde3469dd9c20",
     "truncated": false,
     "paths": [
       ".github/workflows/update-contributors.yml",

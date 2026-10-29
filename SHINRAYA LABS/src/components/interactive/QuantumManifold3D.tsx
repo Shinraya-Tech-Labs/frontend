@@ -132,11 +132,11 @@ export function QuantumManifold3D({ className = "" }: { className?: string }) {
       animationFrameId = requestAnimationFrame(animate);
 
       const isOverdrive = isLimitBreakRef.current;
-      const speedMult = prefersReduced ? 0 : (isOverdrive ? 3.0 : 1.0);
+      const speedMult = isOverdrive ? 3.0 : 1.0;
 
-      if (!isDragging && !prefersReduced) {
-        targetRotY += 0.008 * speedMult;
-        targetRotX += 0.004 * speedMult;
+      if (!isDragging) {
+        targetRotY += 0.012 * speedMult;
+        targetRotX += 0.006 * speedMult;
       }
 
       rotX += (targetRotX - rotX) * 0.1;
@@ -196,7 +196,7 @@ export function QuantumManifold3D({ className = "" }: { className?: string }) {
       ) : (
         <canvas
           ref={canvasRef}
-          className="w-full h-full cursor-grab active:cursor-grabbing"
+          className="w-full h-full cursor-grab active:cursor-grabbing touch-none"
           title="Interactive 3D Quantum Topology - Drag to rotate"
         />
       )}

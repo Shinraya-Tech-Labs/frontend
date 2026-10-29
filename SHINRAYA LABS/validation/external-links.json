@@ -22,22 +22,22 @@
   {
     "url": "https://github.com/Shinraya-Tech-Labs/robust-reasoning-rl",
     "status": 200,
-    "finalUrl": "https://github.com/Shinraya-Tech-Labs/robust-reasoning-rl"
+    "finalUrl": "https://github.com/hinokamiyori/robust-reasoning-rl"
   },
   {
     "url": "https://github.com/Shinraya-Tech-Labs/robust-reasoning-rl/blob/codex/robust-reasoning/docs/final-report.md",
     "status": 200,
-    "finalUrl": "https://github.com/Shinraya-Tech-Labs/robust-reasoning-rl/blob/codex/robust-reasoning/docs/final-report.md"
+    "finalUrl": "https://github.com/hinokamiyori/robust-reasoning-rl/blob/codex/robust-reasoning/docs/final-report.md"
   },
   {
     "url": "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator",
     "status": 200,
-    "finalUrl": "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator"
+    "finalUrl": "https://github.com/hinokamiyori/quantum-advantage-simulator"
   },
   {
     "url": "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/blob/main/docs/FINAL_RESEARCH_REPORT.md",
     "status": 200,
-    "finalUrl": "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/blob/main/docs/FINAL_RESEARCH_REPORT.md"
+    "finalUrl": "https://github.com/hinokamiyori/quantum-advantage-simulator/blob/main/docs/FINAL_RESEARCH_REPORT.md"
   },
   {
     "url": "https://github.com/Shinraya-Tech-Labs/ATLAS",
@@ -52,7 +52,7 @@
   {
     "url": "https://github.com/Shinraya-Tech-Labs/nuerosim",
     "status": 200,
-    "finalUrl": "https://github.com/Shinraya-Tech-Labs/nuerosim"
+    "finalUrl": "https://github.com/sreerevanth/nuerosim"
   },
   {
     "url": "https://github.com/Shinraya-Tech-Labs/PulseStack",
@@ -62,7 +62,7 @@
   {
     "url": "https://github.com/Shinraya-Tech-Labs/FluxCore",
     "status": 200,
-    "finalUrl": "https://github.com/Shinraya-Tech-Labs/FluxCore"
+    "finalUrl": "https://github.com/hinokamiyori/FluxCore"
   },
   {
     "url": "https://github.com/Shinraya-Tech-Labs/MEOWCODE",
@@ -82,7 +82,7 @@
   {
     "url": "https://github.com/Shinraya-Tech-Labs/nuerosim#readme",
     "status": 200,
-    "finalUrl": "https://github.com/Shinraya-Tech-Labs/nuerosim"
+    "finalUrl": "https://github.com/sreerevanth/nuerosim"
   },
   {
     "url": "https://github.com/Shinraya-Tech-Labs/ATLAS/blob/main/docs/CLAIMS.md",
@@ -102,7 +102,7 @@
   {
     "url": "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/issues",
     "status": 200,
-    "finalUrl": "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/issues"
+    "finalUrl": "https://github.com/hinokamiyori/quantum-advantage-simulator/issues"
   },
   {
     "url": "https://github.com/Shinraya-Tech-Labs/AgentWatch/blob/main/CONTRIBUTING.md",
@@ -112,6 +112,6 @@
   {
     "url": "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/blob/main/CONTRIBUTING.md",
     "status": 200,
-    "finalUrl": "https://github.com/Shinraya-Tech-Labs/quantum-advantage-simulator/blob/main/CONTRIBUTING.md"
+    "finalUrl": "https://github.com/hinokamiyori/quantum-advantage-simulator/blob/main/CONTRIBUTING.md"
   }
 ]

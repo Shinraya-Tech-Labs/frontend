@@ -306,11 +306,12 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
       }
 
       const isOverdrive = isLimitBreakRef.current;
-      const speedMultiplier = prefersReduced ? 0 : (isOverdrive ? 3.2 : 1.0);
+      const speedMultiplier = isOverdrive ? 3.0 : 1.0;
 
-      // Smooth Rotation Damping (Lerp)
-      if (!isDragging && !prefersReduced) {
-        targetRotationY += 0.004 * speedMultiplier;
+      // 1. Continuous 3D Orbital Rotation
+      if (!isDragging) {
+        targetRotationY += 0.010 * speedMultiplier;
+        targetRotationX = 0.28 + Math.sin(time * 0.0008) * 0.08;
       }
       currentRotationX += (targetRotationX - currentRotationX) * 0.08;
       currentRotationY += (targetRotationY - currentRotationY) * 0.08;
@@ -318,16 +319,19 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
       sphereGroup.rotation.x = currentRotationX;
       sphereGroup.rotation.y = currentRotationY;
 
-      // Spin Core in opposite direction
-      if (!prefersReduced) {
-        coreMesh.rotation.y -= 0.012 * speedMultiplier;
-        coreMesh.rotation.z += 0.008 * speedMultiplier;
-        innerCoreMesh.rotation.x += 0.01 * speedMultiplier;
-      }
+      // 2. Gyroscopic Counter-Rotation for Core
+      coreMesh.rotation.y -= 0.018 * speedMultiplier;
+      coreMesh.rotation.z += 0.012 * speedMultiplier;
+      innerCoreMesh.rotation.x += 0.014 * speedMultiplier;
+      innerCoreMesh.rotation.y += 0.010 * speedMultiplier;
 
-      // Larmor Precession or Smooth State Orientation
-      if (isPrecessingRef.current && !prefersReduced) {
-        targetPhiRef.current += 0.018 * speedMultiplier;
+      // 3. Qubit Particle Cloud Orbital Spin
+      particles.rotation.y += 0.006 * speedMultiplier;
+      particles.rotation.x -= 0.003 * speedMultiplier;
+
+      // 4. Larmor Precession or Smooth State Orientation
+      if (isPrecessingRef.current) {
+        targetPhiRef.current += 0.022 * speedMultiplier;
       }
 
       currentThetaRef.current += (targetThetaRef.current - currentThetaRef.current) * 0.08;
@@ -453,7 +457,7 @@ export function QuantumBlochSphere({ className = "" }: { className?: string }) {
       ) : (
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing z-0"
+          className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing z-0 touch-none"
           title="Interactive 3D Bloch Sphere - Drag to rotate freely in 3D"
         />
       )}
