@@ -166,10 +166,11 @@ export function TestbenchSimulator() {
                   min="0"
                   max="50"
                   value={noiseRate}
+                  aria-label="Verifier corruption rate percentage"
                   onChange={(e) => setNoiseRate(Number(e.target.value))}
                   className="w-full accent-[#d6b799] bg-[#1a1918] rounded-lg h-2 cursor-pointer"
                 />
-                <p className="text-[11px] text-[#aaa69e]/70">
+                <p className="text-[11px] text-[#aaa69e]">
                   Percentage of training batch verifier labels replaced with adversarial noise.
                 </p>
               </div>
@@ -185,6 +186,7 @@ export function TestbenchSimulator() {
                   min="0"
                   max="100"
                   value={rewardBias * 100}
+                  aria-label="Reward model drift bias"
                   onChange={(e) => setRewardBias(Number(e.target.value) / 100)}
                   className="w-full accent-[#d6b799] bg-[#1a1918] rounded-lg h-2 cursor-pointer"
                 />
@@ -242,7 +244,7 @@ export function TestbenchSimulator() {
 
               {/* Dynamic SVG Visualizer */}
               <div className="h-44 w-full relative border border-[#302e2a]/60 rounded-xl p-3 bg-[#0c0c0b] flex flex-col justify-between">
-                <div className="flex justify-between text-[11px] font-mono text-[#aaa69e]/70">
+                <div className="flex justify-between text-[11px] font-mono text-[#aaa69e]">
                   <span>Policy Trajectory (GSM8K vs Reward Exploit)</span>
                   <span>Steps 0 - {stepCount}</span>
                 </div>
@@ -258,10 +260,10 @@ export function TestbenchSimulator() {
                   <path
                     d={
                       algorithm === "robust"
-                        ? `M 0,80 Q 120,${60 - noiseRate * 0.4} 240,${45 - noiseRate * 0.3} 400,${
+                        ? `M 0,80 C 120,${60 - noiseRate * 0.4} 240,${45 - noiseRate * 0.3} 400,${
                             100 - Number(reasoningMetrics.accuracy)
                           }`
-                        : `M 0,80 Q 100,50 200,65 400,${100 - Number(reasoningMetrics.accuracy)}`
+                        : `M 0,80 C 100,50 200,65 400,${100 - Number(reasoningMetrics.accuracy)}`
                     }
                     fill="none"
                     stroke="#d6b799"
@@ -273,11 +275,11 @@ export function TestbenchSimulator() {
                   <path
                     d={
                       algorithm === "robust"
-                        ? `M 0,95 Q 150,90 280,85 400,${100 - Number(reasoningMetrics.hackIndex)}`
-                        : `M 0,95 Q 120,70 250,40 400,${100 - Number(reasoningMetrics.hackIndex)}`
+                        ? `M 0,95 C 150,90 280,85 400,${100 - Number(reasoningMetrics.hackIndex)}`
+                        : `M 0,95 C 120,70 250,40 400,${100 - Number(reasoningMetrics.hackIndex)}`
                     }
                     fill="none"
-                    stroke="#dd3044"
+                    stroke="#ff6b7a"
                     strokeWidth="2"
                     strokeDasharray={algorithm === "robust" ? "4,4" : "0"}
                     className="transition-all duration-500"
@@ -289,8 +291,8 @@ export function TestbenchSimulator() {
                     <span className="w-2.5 h-0.5 bg-[#d6b799]" />
                     True Validation Pass@1
                   </span>
-                  <span className="flex items-center gap-1.5 text-[#dd3044]">
-                    <span className="w-2.5 h-0.5 bg-[#dd3044]" />
+                  <span className="flex items-center gap-1.5 text-[#ff6b7a]">
+                    <span className="w-2.5 h-0.5 bg-[#ff6b7a]" />
                     Corrupted Reward Overfitting
                   </span>
                 </div>
@@ -314,6 +316,7 @@ export function TestbenchSimulator() {
                   min="2"
                   max="8"
                   value={qubits}
+                  aria-label="Quantum circuit qubit count"
                   onChange={(e) => setQubits(Number(e.target.value))}
                   className="w-full accent-[#d6b799] bg-[#1a1918] rounded-lg h-2 cursor-pointer"
                 />
@@ -329,6 +332,7 @@ export function TestbenchSimulator() {
                   min="0"
                   max="15"
                   value={noiseFactor * 100}
+                  aria-label="Finite-shot thermal noise percentage"
                   onChange={(e) => setNoiseFactor(Number(e.target.value) / 100)}
                   className="w-full accent-[#d6b799] bg-[#1a1918] rounded-lg h-2 cursor-pointer"
                 />
@@ -339,6 +343,7 @@ export function TestbenchSimulator() {
                   <input
                     type="checkbox"
                     checked={mitigation}
+                    aria-label="Enable Zero-Noise Extrapolation Mitigation"
                     onChange={(e) => setMitigation(e.target.checked)}
                     className="accent-[#d6b799] w-4 h-4 rounded cursor-pointer"
                   />

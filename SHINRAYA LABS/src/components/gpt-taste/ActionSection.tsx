@@ -32,18 +32,18 @@ export function ActionSection() {
               href={discordUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#5865F2] text-white font-medium text-sm sm:text-base hover:bg-[#4752C4] transition-all duration-300 shadow-xl shadow-[#5865F2]/20 active:scale-95"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#454FBF] text-white font-semibold text-sm sm:text-base hover:bg-[#3942A8] transition-all duration-300 shadow-xl shadow-[#454FBF]/25 active:scale-95"
             >
-              Join Discord (UT9uaeY46e)
-              <span>↗</span>
+              <span>Join Discord (UT9uaeY46e)</span>
+              <span aria-hidden="true">↗</span>
             </a>
 
             <Link
               href="/contribute"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-[#090909] font-medium text-sm sm:text-base hover:bg-white transition-all duration-300 shadow-xl shadow-[#d6b799]/15 active:scale-95"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base hover:bg-white transition-all duration-300 shadow-xl shadow-[#d6b799]/15 active:scale-95"
             >
-              Contribute to the Work
-              <span>→</span>
+              <span>Contribute to the Work</span>
+              <span aria-hidden="true">→</span>
             </Link>
 
             <a

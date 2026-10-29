@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="site-footer shell border-t border-[#302e2a]/60 pt-12 pb-16">
       <div className="footer-main">
         <Link href="/" className="footer-brand flex items-center gap-3">
-          <Image src="/brand-mark.webp" alt="Shinraya Tech Labs" width={44} height={44} />
+          <Image src="/brand-mark.webp" alt="" aria-hidden="true" width={44} height={44} />
           <span className="font-mono text-sm tracking-widest text-[#f2eee7]">
             SHINRAYA <small className="text-[#d6b799]">TECH LABS</small>
           </span>

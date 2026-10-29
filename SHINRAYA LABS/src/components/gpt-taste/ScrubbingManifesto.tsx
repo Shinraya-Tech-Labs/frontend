@@ -73,9 +73,13 @@ export function ScrubbingManifesto() {
           leaving no assumption unchallenged.
         </h2>
 
-        {/* Scrubbing Paragraph */}
+        {/* Accessible full text for screen readers and audit tools */}
+        <p className="sr-only">{manifestoText}</p>
+
+        {/* Scrubbing Visual Paragraph */}
         <p
           ref={textRef}
+          aria-hidden="true"
           className="text-xl sm:text-2xl md:text-3xl font-light text-[#f2eee7] leading-relaxed tracking-tight max-w-5xl"
         >
           {manifestoText.split(" ").map((word, i) => (

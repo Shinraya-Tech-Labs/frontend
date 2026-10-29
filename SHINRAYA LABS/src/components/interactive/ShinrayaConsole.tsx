@@ -206,6 +206,7 @@ export function ShinrayaConsole() {
             <input
               ref={inputRef}
               type="text"
+              aria-label="Interactive terminal command input"
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
               placeholder="Type command (e.g. status, reproduce, discord)..."

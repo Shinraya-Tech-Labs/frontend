@@ -138,7 +138,7 @@ export function HorizontalAccordion() {
                 >
                   Source Repository <span>↗</span>
                 </a>
-                <span className="text-[11px] font-mono text-[#aaa69e]/50">GitHub</span>
+                <span className="text-[11px] font-mono text-[#aaa69e]">GitHub</span>
               </div>
             </div>
           );

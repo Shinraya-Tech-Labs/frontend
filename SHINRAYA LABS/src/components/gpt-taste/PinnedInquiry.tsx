@@ -24,21 +24,20 @@ export function PinnedInquiry() {
         invalidateOnRefresh: true,
       });
 
-      // Subtle fade & lift for right column cards as they scroll in
+      // Subtle lift for right column cards as they scroll in
       const cards = gsap.utils.toArray<HTMLElement>(".pinned-card");
       cards.forEach((card) => {
         gsap.fromTo(
           card,
-          { opacity: 0.25, y: 30 },
+          { y: 24 },
           {
-            opacity: 1,
             y: 0,
             duration: 0.8,
             ease: "power2.out",
             scrollTrigger: {
               trigger: card,
-              start: "top 80%",
-              end: "top 50%",
+              start: "top 85%",
+              end: "top 55%",
               scrub: 1,
             },
           }
@@ -81,7 +80,7 @@ export function PinnedInquiry() {
         {/* Right Column: Dynamic Scrolling Stack */}
         <div className="lg:col-span-7 space-y-8">
           
-          <div className="pinned-card p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110]/80 backdrop-blur-sm space-y-4 hover:border-[#d6b799]/40 transition-colors">
+          <div className="pinned-card p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110] space-y-4 hover:border-[#d6b799]/40 transition-colors">
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
               Controlled Evaluation
             </span>
@@ -91,13 +90,13 @@ export function PinnedInquiry() {
             <p className="text-[#aaa69e] text-sm leading-relaxed font-light">
               Reinforcement learning with generative reward verifiers degrades quickly when reward models are queried out of distribution. We systematically inject adversarial labels, measuring policy entropy and reward divergence across verified math benchmarks.
             </p>
-            <div className="pt-2 flex items-center justify-between text-xs font-mono text-[#aaa69e]/70">
+            <div className="pt-2 flex items-center justify-between text-xs font-mono text-[#aaa69e]">
               <span>Benchmark: GSM8K Math</span>
               <span>Metric: Pass@1 vs Hack Index</span>
             </div>
           </div>
 
-          <div className="pinned-card p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110]/80 backdrop-blur-sm space-y-4 hover:border-[#d6b799]/40 transition-colors">
+          <div className="pinned-card p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110] space-y-4 hover:border-[#d6b799]/40 transition-colors">
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#d6b799]">
               Classical Reference Comparison
             </span>
@@ -107,14 +106,14 @@ export function PinnedInquiry() {
             <p className="text-[#aaa69e] text-sm leading-relaxed font-light">
               Quantum algorithms frequently benchmark against unoptimized classical baselines to demonstrate artificial speedups. We pair exact tensor network contractions and state vector references against VQE and QAOA formulations to record the real computational boundary.
             </p>
-            <div className="pt-2 flex items-center justify-between text-xs font-mono text-[#aaa69e]/70">
+            <div className="pt-2 flex items-center justify-between text-xs font-mono text-[#aaa69e]">
               <span>Simulator: Minimal-basis VQE</span>
               <span>Reference: Exact Classical Solver</span>
             </div>
           </div>
 
-          <div className="pinned-card p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110]/80 backdrop-blur-sm space-y-4 hover:border-[#d6b799]/40 transition-colors">
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#dd3044]">
+          <div className="pinned-card p-8 md:p-10 rounded-2xl border border-[#302e2a] bg-[#111110] space-y-4 hover:border-[#d6b799]/40 transition-colors">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#ff6b7a]">
               Negative Outcome Discipline
             </span>
             <h3 className="text-2xl font-normal text-[#f2eee7]">
@@ -123,7 +122,7 @@ export function PinnedInquiry() {
             <p className="text-[#aaa69e] text-sm leading-relaxed font-light">
               In the ATLAS evaluation, high-dimensional topological invariants and persistent homology failed to surpass direct dense vector embeddings on multi-hop QA tasks. We published the negative findings alongside complete HotpotQA validation runs.
             </p>
-            <div className="pt-2 flex items-center justify-between text-xs font-mono text-[#aaa69e]/70">
+            <div className="pt-2 flex items-center justify-between text-xs font-mono text-[#aaa69e]">
               <span>Dataset: HotpotQA / MuSiQue</span>
               <span>Finding: Cosine Retrieval Wins</span>
             </div>

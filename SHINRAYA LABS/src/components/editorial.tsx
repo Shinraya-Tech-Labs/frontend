@@ -118,12 +118,12 @@ export function CollaborationCTA() {
               href={discordUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#5865F2] text-white font-medium text-sm hover:bg-[#4752C4] transition-all duration-300 shadow-lg shadow-[#5865F2]/20"
+              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#454FBF] text-white font-semibold text-sm hover:bg-[#3942A8] transition-all duration-300 shadow-lg shadow-[#454FBF]/25"
             >
               Join Discord (UT9uaeY46e) <Arrow diagonal />
             </a>
             <Link
-              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#d6b799] text-[#090909] font-medium text-sm hover:bg-white transition-all duration-300 shadow-lg shadow-[#d6b799]/10"
+              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#d6b799] text-black font-semibold text-sm hover:bg-white transition-all duration-300 shadow-lg shadow-[#d6b799]/10"
               href="/contribute"
             >
               Contribute to the Work <Arrow />

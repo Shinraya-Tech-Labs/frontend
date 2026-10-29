@@ -59,20 +59,20 @@ export function HeroSection() {
           <div className="pt-4 flex flex-wrap items-center gap-4 sm:gap-6">
             <Link
               href="/research"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-[#090909] font-medium text-sm sm:text-base tracking-normal hover:bg-white transition-all duration-300 shadow-lg shadow-[#d6b799]/15 active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#d6b799] text-black font-semibold text-sm sm:text-base tracking-normal hover:bg-white transition-all duration-300 shadow-lg shadow-[#d6b799]/15 active:scale-95 cursor-pointer"
             >
-              Explore Research Archive
-              <span className="text-lg">→</span>
+              <span>Explore Research Archive</span>
+              <span aria-hidden="true" className="text-lg">→</span>
             </Link>
 
             <a
               href={discordUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#5865F2] text-white font-medium text-sm sm:text-base hover:bg-[#4752C4] transition-all duration-300 shadow-lg shadow-[#5865F2]/20 active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#454FBF] text-white font-semibold text-sm sm:text-base hover:bg-[#3942A8] transition-all duration-300 shadow-lg shadow-[#454FBF]/25 active:scale-95 cursor-pointer"
             >
-              Join Discord ({discordInviteCode})
-              <span className="text-lg">↗</span>
+              <span>Join Discord ({discordInviteCode})</span>
+              <span aria-hidden="true" className="text-lg">↗</span>
             </a>
 
             <Link

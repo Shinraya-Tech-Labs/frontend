@@ -318,7 +318,7 @@ const PillNav: React.FC<PillNavProps> = ({
               logoRef.current = el;
             }}
           >
-            <Image src={logo} alt="" width={50} height={50} priority />
+            <Image src={logo} alt="" aria-hidden="true" width={50} height={50} priority />
             <span className="nav-wordmark">
               SHINRAYA <small>TECH LABS</small>
             </span>
@@ -333,7 +333,7 @@ const PillNav: React.FC<PillNavProps> = ({
               logoRef.current = el;
             }}
           >
-            <Image src={logo} alt="" width={50} height={50} priority />
+            <Image src={logo} alt="" aria-hidden="true" width={50} height={50} priority />
             <span className="nav-wordmark">
               SHINRAYA <small>TECH LABS</small>
             </span>

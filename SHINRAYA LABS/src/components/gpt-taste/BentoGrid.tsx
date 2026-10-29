@@ -51,7 +51,7 @@ export function BentoGrid() {
               </div>
               <div className="flex justify-between border-b border-[#302e2a]/40 pb-2">
                 <span className="text-[#f2eee7]">Verifier State</span>
-                <span className="text-[#dd3044]">Controlled Noise Injection</span>
+                <span className="text-[#ff6b7a]">Controlled Noise Injection</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-[#f2eee7]">Evidence Package</span>
@@ -68,7 +68,7 @@ export function BentoGrid() {
               Examine Experimental Protocol
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
-            <span className="text-xs font-mono text-[#aaa69e]/60">codex/robust-reasoning</span>
+            <span className="text-xs font-mono text-[#aaa69e]">codex/robust-reasoning</span>
           </div>
 
           {/* Background image texture */}
@@ -109,7 +109,7 @@ export function BentoGrid() {
             >
               View Benchmark Data <span>→</span>
             </Link>
-            <span className="text-xs font-mono text-[#aaa69e]/60">Exact Reference</span>
+            <span className="text-xs font-mono text-[#aaa69e]">Exact Reference</span>
           </div>
         </div>
 
@@ -120,7 +120,7 @@ export function BentoGrid() {
               <span className="text-xs uppercase tracking-[0.2em] font-mono text-[#aaa69e]">
                 Geometric Learning
               </span>
-              <span className="px-2.5 py-0.5 text-xs rounded-full bg-[#dd3044]/10 text-[#dd3044] border border-[#dd3044]/30">
+              <span className="px-2.5 py-0.5 text-xs rounded-full bg-[#ff6b7a]/15 text-[#ff6b7a] border border-[#ff6b7a]/30">
                 Negative Result Retained
               </span>
             </div>
@@ -139,7 +139,7 @@ export function BentoGrid() {
             >
               Read Negative Report <span>→</span>
             </Link>
-            <span className="text-xs font-mono text-[#aaa69e]/60">HotpotQA Audit</span>
+            <span className="text-xs font-mono text-[#aaa69e]">HotpotQA Audit</span>
           </div>
         </div>
 
@@ -169,7 +169,7 @@ export function BentoGrid() {
             >
               Inspect Model Spec <span>→</span>
             </Link>
-            <span className="text-xs font-mono text-[#aaa69e]/60">Python / C++</span>
+            <span className="text-xs font-mono text-[#aaa69e]">Python / C++</span>
           </div>
         </div>
 
@@ -199,7 +199,7 @@ export function BentoGrid() {
             >
               Explore Observability Tools <span>→</span>
             </Link>
-            <span className="text-xs font-mono text-[#aaa69e]/60">v3 Runtime</span>
+            <span className="text-xs font-mono text-[#aaa69e]">v3 Runtime</span>
           </div>
         </div>
 
