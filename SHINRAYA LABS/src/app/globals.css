@@ -22,6 +22,25 @@
   animation: hyperframeBeam 7s linear infinite;
 }
 
+/* Hyperframes Limit Break Overdrive Modes */
+html.limit-break-active .animate-hyperframe-beam {
+  animation: hyperframeBeam 2.2s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 16px rgba(214, 183, 153, 0.8));
+}
+html.limit-break-active .animate-marquee {
+  animation-duration: 14s !important;
+}
+html.limit-break-active .animate-hyper-shimmer {
+  animation-duration: 2s !important;
+}
+html.limit-break-active .bento-card {
+  box-shadow: 0 0 35px -10px rgba(214, 183, 153, 0.3);
+  border-color: rgba(214, 183, 153, 0.5) !important;
+}
+html.limit-break-active .animate-ambient-drift {
+  animation-duration: 6s !important;
+}
+
 @keyframes hyperShimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(200%); }

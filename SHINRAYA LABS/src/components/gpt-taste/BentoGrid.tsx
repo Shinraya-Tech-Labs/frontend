@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
 import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 import { HyperframeCounter } from "@/components/hyperframes/HyperframeCounter";
+import { QuantumManifold3D } from "@/components/interactive/QuantumManifold3D";
 
 export function BentoGrid() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -171,6 +172,7 @@ export function BentoGrid() {
             }}
             aria-hidden="true"
           />
+          <HyperframeBeam radius={16} duration={9} />
           <HyperframeCorners />
           <div>
             <div className="flex items-center justify-between gap-4 mb-4">
@@ -192,6 +194,8 @@ export function BentoGrid() {
               <span className="text-[#302e2a]">|</span>
               <span className="text-[#aaa69e]">Circuit: <span className="text-[#f2eee7] font-medium"><HyperframeCounter value={8} suffix=" Qubits" /></span></span>
             </div>
+            {/* Interactive 3D Quantum Torus Knot Lattice */}
+            <QuantumManifold3D className="mt-4" />
           </div>
 
           <div className="pt-6 mt-6 border-t border-[#302e2a]/60 flex items-center justify-between">

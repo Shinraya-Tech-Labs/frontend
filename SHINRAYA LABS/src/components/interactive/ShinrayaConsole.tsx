@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { discordUrl, discordInviteCode } from "@/lib/site";
+import { useLimitBreak } from "@/context/LimitBreakContext";
 
 type TerminalEntry = {
   command: string;
@@ -11,6 +12,7 @@ type TerminalEntry = {
 const SUGGESTED_COMMANDS = [
   "help",
   "status",
+  "limitbreak",
   "benchmarks",
   "reproduce",
   "discord",
@@ -18,6 +20,7 @@ const SUGGESTED_COMMANDS = [
 ];
 
 export function ShinrayaConsole() {
+  const { isLimitBreak, toggleLimitBreak } = useLimitBreak();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [inputVal, setInputVal] = useState<string>("");
   const [history, setHistory] = useState<TerminalEntry[]>([
@@ -55,10 +58,28 @@ export function ShinrayaConsole() {
         response = (
           <div className="space-y-1 text-xs font-mono text-[#aaa69e]">
             <p><span className="text-[#d6b799]">status</span> — Show cluster queues, GPU availability, and verifier state</p>
+            <p><span className="text-[#d6b799]">limitbreak</span> — Toggle Hyperframes 60FPS Overdrive Mode</p>
             <p><span className="text-[#d6b799]">benchmarks</span> — Print latest GSM8K & HotpotQA accuracy evaluations</p>
             <p><span className="text-[#d6b799]">reproduce</span> — Show command to rerun frozen seed evaluations</p>
             <p><span className="text-[#d6b799]">discord</span> — Get community invitation ({discordInviteCode})</p>
             <p><span className="text-[#d6b799]">clear</span> — Reset terminal buffer</p>
+          </div>
+        );
+        break;
+
+      case "limitbreak":
+      case "overdrive":
+        toggleLimitBreak();
+        response = (
+          <div className="space-y-1 text-xs font-mono text-[#aaa69e]">
+            <p className="text-white font-semibold">
+              HYPERFRAME LIMIT BREAK: {!isLimitBreak ? "OVERDRIVE ENGAGED" : "RETURNED TO STABLE"}
+            </p>
+            <p>
+              {!isLimitBreak
+                ? "3D canvases accelerated to 60FPS+, quantum lattice resonance unlocked, laser warp beams active."
+                : "Restored nominal laboratory parameters."}
+            </p>
           </div>
         );
         break;

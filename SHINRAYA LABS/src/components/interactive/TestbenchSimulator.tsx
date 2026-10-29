@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
 import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
+import { QuantumManifold3D } from "@/components/interactive/QuantumManifold3D";
 
 type SimMode = "reasoning" | "quantum" | "neuro";
 
@@ -433,6 +434,11 @@ export function TestbenchSimulator() {
                   <span>Advantage Check:</span>
                   <span className="text-[#ff6b7a]">No Quantum Advantage on Small Systems</span>
                 </div>
+              </div>
+
+              {/* Live 3D Quantum Topology Visualizer */}
+              <div className="pt-1">
+                <QuantumManifold3D className="w-full" />
               </div>
             </div>
           </div>

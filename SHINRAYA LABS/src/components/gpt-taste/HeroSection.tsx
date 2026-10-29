@@ -2,10 +2,9 @@
 
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { gsap } from "gsap";
 import Particles from "@/components/approved/Particles";
-import TiltedCard from "@/components/approved/TiltedCard";
+import { QuantumBlochSphere } from "@/components/interactive/QuantumBlochSphere";
 import { HyperframeBeam } from "@/components/hyperframes/HyperframeBeam";
 import { HyperframeCorners } from "@/components/hyperframes/HyperframeCorners";
 import { discordUrl, discordInviteCode } from "@/lib/site";
@@ -137,42 +136,13 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right: 3D Interactive Tilted Emblem */}
-        <div className="hero-card-col lg:col-span-4 relative flex justify-center lg:justify-end pointer-events-auto">
-          <TiltedCard
-            containerHeight="400px"
-            containerWidth="380px"
-            imageHeight="400px"
-            imageWidth="380px"
-            rotateAmplitude={14}
-            scaleOnHover={1.04}
-            showTooltip={false}
-            glare={0.3}
-            glareColor="#d6b799"
-            className="rounded-3xl cursor-grab active:cursor-grabbing"
-          >
-            <div className="relative w-full h-full rounded-3xl border border-[#302e2a] bg-[#111110] p-6 shadow-2xl backdrop-blur-xl flex flex-col justify-between overflow-hidden">
-              <HyperframeBeam radius={24} duration={8} />
-              <HyperframeCorners size="text-[13px]" />
-
-              <div className="relative w-full h-[280px] overflow-hidden rounded-2xl bg-[#090909]">
-                <Image
-                  src="/logo.webp"
-                  alt="Shinraya Tech Labs Emblem"
-                  fill
-                  priority
-                  className="object-cover object-center filter contrast-125"
-                  sizes="(max-width: 768px) 320px, 380px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090909] via-transparent to-transparent opacity-60" />
-              </div>
-
-              <div className="flex items-center justify-between text-xs font-mono text-[#f2eee7] bg-[#090909]/90 px-4 py-3 rounded-xl border border-[#302e2a]">
-                <span className="tracking-widest">SHINRAYA LABS</span>
-                <span className="text-[#d6b799] font-medium">TACTILE 3D CARD</span>
-              </div>
-            </div>
-          </TiltedCard>
+        {/* Right: Real Interactive 3D WebGL Bloch Sphere */}
+        <div className="hero-card-col lg:col-span-4 relative flex justify-center lg:justify-end pointer-events-auto w-full max-w-[420px] mx-auto lg:mx-0">
+          <div className="relative w-full rounded-3xl group">
+            <HyperframeBeam radius={24} duration={8} />
+            <HyperframeCorners size="text-[13px]" />
+            <QuantumBlochSphere className="w-full" />
+          </div>
         </div>
 
       </div>

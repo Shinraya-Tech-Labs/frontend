@@ -4,6 +4,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ShinrayaConsole } from "@/components/interactive/ShinrayaConsole";
 import { HyperframeSeekbar } from "@/components/hyperframes/HyperframeSeekbar";
+import { LimitBreakProvider } from "@/context/LimitBreakContext";
+import { LimitBreakHUD } from "@/components/hyperframes/LimitBreakHUD";
 import { siteUrl, siteDescription } from "@/lib/site";
 import "./globals.css";
 
@@ -49,16 +51,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={outfit.className}>
-        <a className="skip-link" href="#main">
-          Skip to content
-        </a>
-        <HyperframeSeekbar />
-        <Header />
-        <main id="main" tabIndex={-1} className="overflow-x-hidden w-full max-w-full">
-          {children}
-        </main>
-        <Footer />
-        <ShinrayaConsole />
+        <LimitBreakProvider>
+          <a className="skip-link" href="#main">
+            Skip to content
+          </a>
+          <HyperframeSeekbar />
+          <Header />
+          <main id="main" tabIndex={-1} className="overflow-x-hidden w-full max-w-full">
+            {children}
+          </main>
+          <Footer />
+          <ShinrayaConsole />
+          <LimitBreakHUD />
+        </LimitBreakProvider>
       </body>
     </html>
   );
